@@ -1,6 +1,6 @@
 <?php
 
-namespace feiron\feTheme;
+namespace feiron\fe_theme;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
@@ -12,7 +12,7 @@ class FeThemeServiceProvider extends ServiceProvider {
 
     public function boot(){
 
-        $PackageName='feTheme';
+        $PackageName='fe_theme';
         //locading package route files
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');        
 
