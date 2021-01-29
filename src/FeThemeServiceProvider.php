@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\View;
 use feiron\felaraframe\lib\FeFrame;
+use feiron\fe_theme\lib\feThemeManager;
 
 class FeThemeServiceProvider extends ServiceProvider {
 
@@ -49,7 +50,9 @@ class FeThemeServiceProvider extends ServiceProvider {
     }
 
     public function register(){        
-
+        $this->app->singleton('feThemeManager', function ($app) {
+            return new feThemeManager();
+        });
     }
 
     private function registerBladeComponents(){
