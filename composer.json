@@ -1,0 +1,35 @@
+{
+    "name": "feiron/fetheme",
+    "description": "Theme support for laravel feLaraFrame",
+    "type": "library",
+    "license": "Apache-2.0",
+    "require": {
+        "php": ">=7.2.1",
+        "feiron/felaraframe": ">=1.0",
+        "laravel/framework": ">=8.0"
+    },
+    "require-dev": {
+        "php": ">=7.2.1",
+        "feiron/felaraframe": ">=1.0",
+        "laravel/framework": ">=8.0"
+    },
+    "authors": [
+        {
+            "name": "Lucas",
+            "email": "yu0307@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "feiron\\feTheme\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "feiron\\feTheme\\FeThemeServiceProvider"
+            ]
+        }
+    }
+}
