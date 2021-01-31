@@ -2,7 +2,7 @@
 
 namespace feiron\fe_theme\lib;
 use feiron\fe_theme\lib\contracts\feTheme;
-use feiron\fe_theme\laraTheme\felaraframeTheme;
+use feiron\fe_theme\felaraframeTheme;
 use feiron\felaraframe\models\LF_MetaInfo;
 class feThemeManager{
     private $theme; //feTheme
@@ -21,6 +21,11 @@ class feThemeManager{
         $this->themeList[$this->theme->name()]=$this->theme;
         if(false===array_key_exists('felaraframe', $this->themeList)){ // make sure default theme is always present for users
             $this->AppendTheme(new felaraframeTheme());
+        }
+        foreach($this->theme->getThemeResources() as $location=>$resources){
+            foreach($resources as $resource){
+                app()->FeFrame->enqueueResource(asset("/feiron/".$this->theme->name().'/'.$resource),$location);
+            }
         }
     }
 
@@ -57,9 +62,9 @@ class feThemeManager{
     }
 
     public function RenderThemeSettings(){
-        return $this->RenderSettings($this->theme->ThemeSettings(), $this->themeSetting);
+        return $this->RenderSettings($this->theme->themeSettings(), $this->themeSetting);
     }
-    
+
     private function RenderSettings($settingList,$valueList, $heading = 3):string{//html
         $html='';
         foreach($settingList as $key=>$settings){
@@ -71,7 +76,7 @@ class feThemeManager{
                             <div class="ThemeSettingHeading">
                                 <h6>'. ($settings['label']??$key).'</h6>
                             </div>      
-                            ' . $this->BuildFormControl($settings, ($valueList[$settings['name']]??null)).'
+                            ' . app()->feFrame->BuildFormControl($settings, ($valueList[$settings['name']]??null)).'
                           </div>';
             }
         }

@@ -6,7 +6,6 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\View;
-use feiron\felaraframe\lib\FeFrame;
 use feiron\fe_theme\lib\feThemeManager;
 
 class FeThemeServiceProvider extends ServiceProvider {
@@ -31,14 +30,12 @@ class FeThemeServiceProvider extends ServiceProvider {
         $this->publishes([
             __DIR__ . '/assets' => public_path('feiron/' . $PackageName),
         ], ($PackageName . '_public'));
-
         View::share('siteInfo',
-                                array_merge(View::getShared('siteInfo'),[
-                                    'themeSettings'=> (app()->FeFrame->GetThemeSettings() ?? []),
-                                    'theme'=>(((app()->FeFrame->GetCurrentTheme())->name())?? 'felaraframe')
+                                array_merge(View::shared('siteInfo')??[],[
+                                    'themeSettings'=> (app()->feThemeManager->GetThemeSettings() ?? []),
+                                    'theme'=>(((app()->feThemeManager->GetCurrentTheme())->name())?? 'felaraframe')
                                 ])
                     );
-
         app()->frameOutlet->bindOutlet('Fe_FrameOutlet', new \feiron\felaraframe\lib\outlet\feOutlet([
             'view' => 'felaraframe::ThemeManagement',
             'myName' => 'Theme Management',

@@ -7,6 +7,10 @@ interface feTheme
 
     public function name():string;
 
-    public function ThemeSettings():array;
+    public function title():string;
+
+    public function themeSettings():array;
+
+    public function getThemeResources():array;
 
 }
