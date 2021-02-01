@@ -1,0 +1,9 @@
+@use "sass:map";
+$themes:(
+    "theme1":(
+        "primary":#181a1d,
+        "secondary":#2b2e33,
+        "tertiary":#dce1e4,
+        "nav-bar":#f8f8f8
+    )
+);

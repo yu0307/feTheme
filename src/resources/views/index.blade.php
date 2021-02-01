@@ -1,4 +1,4 @@
-<section class="body h-100 primary-1 secondary-1">
+<section class="body h-100 theme1">
 	<div class="container-fluid h-100">
 		<div class="row h-100">
 			<!-- Left Side -->
