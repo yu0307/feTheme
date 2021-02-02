@@ -13,6 +13,7 @@
 *{
     transition: all 0.5s ease;
 }
+
 html {
     scroll-behavior: smooth;
 }
@@ -30,8 +31,13 @@ body{
     left: 0px;
     right: 0px;
 }
+.no-decoration{
+    list-style: none;
+    text-decoration: none;
+}
 
 .body{
+    font-family: 'Lato', 'Open Sans', Helvetica, sans-serif;
     @each $location,$list in variables.$themes {
         @each $key,$vals in $list {
             @each $attr,$val in $vals {
@@ -125,5 +131,78 @@ section.main{
 #sidebar-left{
     &.show{
         display: block !important; 
+    }
+}
+#notifications-header,#user-header{
+    .dropdown-menu{
+        padding: 0px;
+        left: auto;
+        right: 0px !important;
+        margin-top: 5px;
+        a{
+            padding: 10px 12px;
+            color: var(--left-panel-font-color);
+            text-decoration: none;
+            font-size: 13px;
+            display: block;
+        }
+        .fan{
+            width: 100%;
+            height: 15px;
+            background: none;
+            position: absolute;
+            top: -15px;
+        }
+        &::after{
+            border-bottom: 6px solid #2b2e33;
+            border-left: 6px solid rgba(0, 0, 0, 0);
+            border-right: 6px solid rgba(0, 0, 0, 0);
+            content: "";
+            display: inline-block;
+            position: absolute;
+            right: 10px;
+            top: -6px;
+        }
+    }
+    &:hover .dropdown-menu{
+        display: block;
+    }
+}
+#notifications-header{
+    .badge-header{
+        font-size: 10px;
+        padding: 2px 5px;
+        position: relative;
+        right: 8px;
+        top: -8px;
+        border-radius: 8px;
+    }
+    .dropdown-menu{
+        background: var(--nav-bar-bg-color);
+        color: var(--nav-bar-font-color);
+        .dropdown-header{
+            background: var(--left-panel-bg-color);
+            color: var(--left-panel-font-color);
+        }
+        .message{
+            small{
+                font-size: 12px;
+            }
+            p{
+                font-style: italic;
+                font-size: 12px;
+            }
+        }
+    }
+}
+#user-header{
+    .usr-img{
+        padding: 2px;
+        max-height: 45px;
+        width: auto;
+    }
+    .dropdown-menu{
+        background: var(--left-panel-bg-color);
+        color: var(--left-panel-font-color);
     }
 }
