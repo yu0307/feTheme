@@ -72,9 +72,12 @@ body{
                         .nav-controls{
                             max-width: 80%;
                             width: 80%;
+                            .menu-direction-control{
+                                margin: 0px 2px;
+                            }
                             .nav-container{
-                                max-width: 100%;
-                                width: 100%;
+                                max-width: 95%;
+                                width: 95%;
                                 margin-bottom: 0;
                                 .nav-icons{
                                     white-space: nowrap;
@@ -102,6 +105,14 @@ body{
                     color: var(--left-panel-font-color);
                 }
             }
+        }
+    }
+}
+.custom-scroll{
+    .scroll-x, .scroll-y{
+        display: none;
+        &.show{
+            display: inherit;
         }
     }
 }

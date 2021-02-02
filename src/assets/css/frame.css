@@ -120,9 +120,12 @@ body {
   max-width: 80%;
   width: 80%;
 }
+.body .container-fluid .nav-bar.top-main .top-bar .topbar-controls .nav-controls .menu-direction-control {
+  margin: 0px 2px;
+}
 .body .container-fluid .nav-bar.top-main .top-bar .topbar-controls .nav-controls .nav-container {
-  max-width: 100%;
-  width: 100%;
+  max-width: 95%;
+  width: 95%;
   margin-bottom: 0;
 }
 .body .container-fluid .nav-bar.top-main .top-bar .topbar-controls .nav-controls .nav-container .nav-icons {
@@ -143,6 +146,13 @@ body {
 }
 .body .container-fluid .row .left-panel a {
   color: var(--left-panel-font-color);
+}
+
+.custom-scroll .scroll-x, .custom-scroll .scroll-y {
+  display: none;
+}
+.custom-scroll .scroll-x.show, .custom-scroll .scroll-y.show {
+  display: inherit;
 }
 
 section.main {
