@@ -1,0 +1,18 @@
+@use "sass:map";
+$themes:(
+    "brand":(
+        1:("bg-color":#181a1d,"font-color":#ffffff)
+    ),
+    "nav-bar":(
+        1:("bg-color":#f8f8f8,"font-color":#161616)
+    ),
+    "left-panel":(
+        1:("bg-color":#2b2e33,"font-color":#ffffff)
+    ),
+    "primary":(
+        1:("bg-color":#dce1e4,"font-color":#161616)
+    ),
+    "secondary":(
+        1:("bg-color":#e2ebef,"font-color":#202020)
+    )
+);

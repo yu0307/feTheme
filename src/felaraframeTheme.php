@@ -17,10 +17,13 @@ class felaraframeTheme implements feTheme {
                 'headerstyles'=>[
                     'bootstrap5beta/css/bootstrap.css',
                     'fontawesome5.15.2/css/all.css',
+                    'OverlayScrollbars-1.13.1/css/OverlayScrollbars.css',
                     'css/frame.css'
                 ],
                 'headerscripts'=>[
-                    'bootstrap5beta/js/bootstrap.bundle.js'
+                    'bootstrap5beta/js/bootstrap.bundle.js',
+                    'OverlayScrollbars-1.13.1/js/OverlayScrollbars.js',
+                    'js/app.js'
                 ]
             ];
         }else{
@@ -28,10 +31,13 @@ class felaraframeTheme implements feTheme {
                 'headerstyles'=>[
                     'bootstrap5beta/css/bootstrap.min.css',
                     'fontawesome5.15.2/css/all.min.css',
-                    'css/frame.css'
+                    'OverlayScrollbars-1.13.1/css/OverlayScrollbars.min.css',
+                    'css/frame.min.css'
                 ],
                 'headerscripts'=>[
-                    'bootstrap5beta/js/bootstrap.bundle.min.js'
+                    'bootstrap5beta/js/bootstrap.bundle.min.js',
+                    'OverlayScrollbars-1.13.1/js/OverlayScrollbars.min.js',
+                    'js/app.min.js'
                 ]
             ];
         }
