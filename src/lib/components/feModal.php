@@ -6,19 +6,15 @@ use Illuminate\View\Component;
 
 class feModal extends Component
 {
-    public $direction;
-    public $size;
-    public $hasForm;
-    public $action;
-    public $name; 
-    public $formId;
-    public $method;
+    public $dialogOptions;
     public $headerBg;
     public $footerBg;
 
-    public function __construct()
+    public function __construct($dialogOptions='modal-dialog-centered modal-dialog-scrollable modal-lg',$headerBg='bg-primary',$footerBg='bg-dark')
     {
-
+        $this->dialogOptions=$dialogOptions;
+        $this->headerBg=$headerBg;
+        $this->footerBg=$footerBg;
     }
 
     /**

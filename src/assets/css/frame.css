@@ -154,6 +154,9 @@ body {
 .body .container-fluid .row .left-panel .nav-menu i, .body .container-fluid .row .left-panel .nav-menu span {
   vertical-align: middle;
 }
+.body .container-fluid .row .left-panel .nav-menu i {
+  font-size: 1.2rem;
+}
 .body .container-fluid .row .left-panel .nav-menu a {
   display: block;
   text-decoration: none;
@@ -170,6 +173,7 @@ body {
 .body .container-fluid .row .left-panel .nav-menu .menu-parent .sub-menu {
   position: relative;
   background: #00000047;
+  margin-top: 0.5rem;
 }
 .body .container-fluid .row .left-panel .nav-menu .menu-parent .sub-menu li:before {
   background: #ffffff40;

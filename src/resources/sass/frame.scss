@@ -26,7 +26,7 @@ body{
     a{
         color: var(--primary-font-color);
     }
-    
+
     .container-fluid{
         .nav-bar{
             height: 46px;
@@ -143,6 +143,9 @@ body{
                     i,span{
                         vertical-align: middle;
                     }
+                    i{
+                        font-size: 1.2rem;
+                    }
                     a{
                         display: block;
                         text-decoration: none;
@@ -160,6 +163,7 @@ body{
                         .sub-menu{
                             position: relative;
                             background: #00000047;
+                            margin-top: 0.5rem;
                             li{
                                 &:before{
                                     background: #ffffff40;

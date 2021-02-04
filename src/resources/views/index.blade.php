@@ -26,8 +26,8 @@
 					</div>
 				</div>
 				<div class="row main h-100">
-					<div class="col p-2">
-						<div class="main-content">
+					<div class="col p-2 custom-scroll">
+						<div class="main-content scroll-container h-100">
 							<main>
 								@yield('main-content')
 							</main>
@@ -39,3 +39,4 @@
 		</div>
 	</div>
 </section>
+@stack('endBody')

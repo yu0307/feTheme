@@ -1,5 +1,7 @@
 @use 'variables';
 @use 'main-content';
+@use 'button';
+@use "sass:color";
 
 :root{
     @each $location,$list in variables.$themes {
@@ -13,6 +15,10 @@
     @each $key,$color in variables.$color_palette {
         --#{$key}:#{map-get($color, "color")};
         --#{$key}-color:#{map-get($color, "font-color")};
+        --#{$key}-hover:#{color.scale(map-get($color, "color"), $lightness: -5%)};
+        --#{$key}-active:#{color.scale(map-get($color, "color"), $lightness: -10%)};
+        --#{$key}-open:#{color.scale(map-get($color, "color"), $lightness: -20%)};
+        --#{$key}-disabled:#{color.scale(map-get($color, "color"), $lightness: -30%)};
     }
 }
 
@@ -44,14 +50,18 @@ html {
 
 a{
     color: inherit;
-} 
+}
 
 .no-decoration{
     list-style: none;
     text-decoration: none;
 }
 body{
+    @include button.buttons;
     .main-content{
         @include main-content.main-content;
+    }
+    ul{
+        border-width: 0px !important;
     }
 }
