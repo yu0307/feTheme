@@ -76,11 +76,17 @@
                     </li>
                     @endif
                     @if (Route::has('LF_controlpanel'))
-                    @role('admin')
-                        <li>
-                            <a href="{{route('LF_controlpanel')}}"><i class="fas fa-cogs"></i><span class="ms-1">Control Panel</span></a>
-                        </li>
-                    @endrole
+                        @if (array_key_exists('role',app()['blade.compiler']->getCustomDirectives()))
+                            @role('admin')
+                                <li>
+                                    <a href="{{route('LF_controlpanel')}}"><i class="fas fa-cogs"></i><span class="ms-1">Control Panel</span></a>
+                                </li>
+                            @endrole
+                        @else
+                            <li>
+                                <a href="{{route('LF_controlpanel')}}"><i class="fas fa-cogs"></i><span class="ms-1">Control Panel</span></a>
+                            </li>
+                        @endif
                     @endif
 
                     @if (Route::has('logout') || Route::has('Fe_Logout'))

@@ -18,6 +18,7 @@ class felaraframeTheme implements feTheme {
                     'bootstrap5beta/css/bootstrap.css',
                     'fontawesome5.15.2/css/all.css',
                     'OverlayScrollbars-1.13.1/css/OverlayScrollbars.css',
+                    'css/util.css',
                     'css/frame.css'
                 ],
                 'headerscripts'=>[
@@ -32,6 +33,7 @@ class felaraframeTheme implements feTheme {
                     'bootstrap5beta/css/bootstrap.min.css',
                     'fontawesome5.15.2/css/all.min.css',
                     'OverlayScrollbars-1.13.1/css/OverlayScrollbars.min.css',
+                    'css/util.min.css',
                     'css/frame.min.css'
                 ],
                 'headerscripts'=>[

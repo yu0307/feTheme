@@ -4,10 +4,15 @@ function toggleClass(target, className) {
     }
 }
 
-function toggleControl(event) {
+function toggleControl() {
     if(this.attributes.hasOwnProperty('tg-target')){
         toggleClass(document.querySelector(this.attributes.getNamedItem('tg-target').value),'show');
     }
+}
+
+function toggleCollapse(){
+    this.querySelector('i.fa-angle-right').classList.toggle('fa-rotate-90');
+    toggleClass(this.closest('.collapse-container').querySelector('.collapse'),'show');
 }
 
 function scrollControl(event){
@@ -41,6 +46,9 @@ function toggleNavButton(e){
 function documentReady() {
     document.querySelectorAll('.toggleTarget').forEach((elm)=>{
         elm.addEventListener('click',toggleControl);
+    });
+    document.querySelectorAll('.collapsible > a').forEach((elm)=>{
+        elm.addEventListener('click',toggleCollapse);
     });
     document.querySelectorAll('.custom-scroll').forEach((elm)=>{
         OverlayScrollbars(elm.querySelector('.scroll-container'), { 

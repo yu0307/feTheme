@@ -1,0 +1,57 @@
+@use 'variables';
+@use 'main-content';
+
+:root{
+    @each $location,$list in variables.$themes {
+        @each $key,$vals in $list {
+            @each $attr,$val in $vals {
+                --#{$location}-#{$key}-#{$attr}:#{$val};
+                --#{$location}-#{$attr}:#ffffff;
+            }
+        }
+    }
+    @each $key,$color in variables.$color_palette {
+        --#{$key}:#{map-get($color, "color")};
+        --#{$key}-color:#{map-get($color, "font-color")};
+    }
+}
+
+@each $key,$color in variables.$color_palette {
+    .c-#{$key}{
+        color:var(--#{$key}) !important;
+    }
+    .bg-#{$key}{
+        &:not(i), &.form-control:focus{
+            background-color:var(--#{$key}) !important;
+            color: var(--#{$key}-color) !important;
+        }
+    }
+}
+
+@for $i from 1 through 5 {
+    .w-#{$i*100}px{
+        width: #{$i*100}px;
+    }
+}
+
+*{
+    transition: all 0.5s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a{
+    color: inherit;
+} 
+
+.no-decoration{
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    .main-content{
+        @include main-content.main-content;
+    }
+}

@@ -1,4 +1,5 @@
 @includeIf('fe_theme::topbar')
+@includeIf('fe_theme::leftpanel')
 <section class="body h-100 brand1 nav-bar1 left-panel1 primary1 secondary1 ">
 	<div class="container-fluid h-100">
 		<div class="row h-100">
@@ -10,8 +11,8 @@
 					</div>
 				</div>
 				<div class="row left-panel h-100">
-					<div class="col p-2">
-						left Panel
+					<div class="col px-0 py-1">
+						@yield('left-panel')
 					</div>
 				</div>
 			</div>
@@ -26,9 +27,12 @@
 				</div>
 				<div class="row main h-100">
 					<div class="col p-2">
-						<main>
-							Hazy says: Meow~~~
-						</main>
+						<div class="main-content">
+							<main>
+								@yield('main-content')
+							</main>
+						</div>
+						
 					</div>
 				</div>
 			</div>

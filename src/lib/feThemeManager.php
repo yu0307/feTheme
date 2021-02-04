@@ -82,4 +82,26 @@ class feThemeManager{
         }
         return $html;
     }
+
+    public function renderMenu($menuItems){ // feiron\felaraframe\lib\feMenuItem
+        $output = "";
+        foreach($menuItems as $menu){
+            $hasSub=count($menu['subMenu']??[])>0;
+            $output.='
+                <li class="menu-item'.$menu['class'].($hasSub?" menu-parent collapse-container collapsible":"").'" '.($hasSub?'data-bs-toggle="collapse" aria-expanded="false"':"").'>
+                    <a href="'.($menu['href']??'#').'" class="d-block">
+                        '.((isset($menu['icon']) && strlen($menu['icon'])>0)?('<i class="align-middle d-inline-block '.$menu['icon'].'"></i>'):"").'
+                        <span class="align-middle d-inline-block text-truncate menu-title">'.$menu['title'].'</span>
+                        '.($hasSub?'<span class="sub-menu-arrow align-middle d-inline-block float-end"><i class="fas fa-angle-right"></i></span>':"").'
+                    </a>
+                    '.($hasSub?('
+                    <ul class="sub-menu collapse">
+                        '.$this->renderMenu($menu['subMenu']).'
+                    </ul>
+                    '):"").'
+                </li>
+            ';
+        }
+        return $output;
+    }
 }

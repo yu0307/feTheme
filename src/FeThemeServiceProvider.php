@@ -53,14 +53,10 @@ class FeThemeServiceProvider extends ServiceProvider {
     }
 
     private function registerBladeComponents(){
-        //read from dir and build a cache and load from cache.
-        // Blade::component('fe-sidebar-menu', \feiron\felaraframe\lib\components\feSidebarMenu::class);
-        // Blade::component('fe-notes', \feiron\felaraframe\lib\components\feNotes::class);
-        // Blade::component('fe-file-upload', \feiron\felaraframe\lib\components\feFileUpload::class);
-        // Blade::component('fe-modal', \feiron\felaraframe\lib\components\feModal::class);
-        // Blade::component('fe-portlet', \feiron\felaraframe\lib\components\fePortlet::class);
-        // Blade::component('fe-date-picker', \feiron\felaraframe\lib\components\feDatePicker::class);
-        // Blade::component('fe-data-table', \feiron\felaraframe\lib\components\feDataTable::class);
+        Blade::directive('renderMenu', function ($expression) {
+            return "<?php echo app()->feThemeManager->renderMenu($expression); ?>";
+        });
+        Blade::componentNamespace('feiron\\fe_theme\\lib\\components', 'fe_theme');
     }
 }
 

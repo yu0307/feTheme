@@ -16,3 +16,75 @@ $themes:(
         1:("bg-color":#e2ebef,"font-color":#202020)
     )
 );
+
+$color_palette:(
+    "primary":(
+        "color":#319DB5,"font-color":#fff
+    ),
+    "secondary":(
+        "color":#1E6170,"font-color":#fff
+    ),
+    "info":(
+        "color":#e6d9b2,"font-color":#252525
+    ),
+    "danger":(
+        "color":#C75757,"font-color":#fff
+    ),
+    "success":(
+        "color":#18A689,"font-color":#fff
+    ),
+    "warning":(
+        "color":#FF9122,"font-color":#fff
+    ),
+    "gray":(
+        "color":#82848A,"font-color":#000000
+    ),
+    "gray-light":(
+        "color":#fafafa,"font-color":#5B5B5B
+    ),
+    "red":(
+        "color":#C9625F,"font-color":#fff
+    ),
+    "yellow":(
+        "color":#EBC85E,"font-color":#fff
+    ),
+    "white":(
+        "color":#fff,"font-color":#000000
+    ),
+    "light":(
+        "color":#E9E9E9,"font-color":#000000
+    ),
+    "green":(
+        "color":#18a689,"font-color":#fff
+    ),
+    "blue":(
+        "color":#4584D1,"font-color":#fff
+    ),
+    "dark":(
+        "color":#2B2E33,"font-color":#fff
+    ),
+    "blue-light":(
+        "color":#c6e9f5,"font-color":#5B5B5B
+    ),
+    "blue-dark":(
+        "color":#30364A,"font-color":#fff
+    ),
+    "orange":(
+        "color":#F2A057,"font-color":#fff
+    ),
+    "purple":(
+        "color":#A58BD3,"font-color":#fff
+    ),
+    "purple-dark":(
+        "color":#393F51,"font-color":#fff
+    ),
+    "primary-dark":(
+        "color":#164954,"font-color":#fff
+    ),
+    "pink":(
+        "color":#DC88E6,"font-color":#fff
+    ),
+    "aero":(
+        "color":#B9D5DB,"font-color":#2C2C2C
+    )
+)
