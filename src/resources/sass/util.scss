@@ -1,7 +1,12 @@
+@use "sass:color";
 @use 'variables';
 @use 'main-content';
 @use 'button';
-@use "sass:color";
+@use 'badge';
+@use 'labels';
+@use 'progress-bar';
+@use 'tab';
+@use 'panel-accordion';
 
 :root{
     @each $location,$list in variables.$themes {
@@ -58,6 +63,11 @@ a{
 }
 body{
     @include button.buttons;
+    @include badge.badges;
+    @include labels.labels;
+    @include progress-bar.progress-bars;
+    @include tab.tabs;
+    @include panel-accordion.accordions;
     .main-content{
         @include main-content.main-content;
     }

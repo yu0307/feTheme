@@ -1,0 +1,27 @@
+@use 'variables';
+@mixin labels {
+    .label {
+        font-weight: 500;
+        display: inline;
+        padding: 0.2em 0.6em;
+        font-size: 75%;
+        line-height: 1;
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: .25em;
+    }
+    @each $key, $color in variables.$color_palette {
+        .label-#{$key} {
+            background-color: var(--#{$key});
+            color: var(--#{$key}-color);
+        }
+        .label-#{$key}[href]:hover {
+            background-color: var(--#{$key}-hover);
+        }
+        .label-#{$key}[href]:focus {
+            background-color: var(--#{$key}-active);
+        }
+    }
+}

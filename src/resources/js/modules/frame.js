@@ -54,6 +54,7 @@ function documentReady() {
         OverlayScrollbars(elm.querySelector('.scroll-container'), { 
             className : "os-theme-dark",
             scrollbars:{autoHide : "leave"},
+            sizeAutoCapable:(elm.attributes.getNamedItem('size-auto-capable')?elm.attributes.getNamedItem('size-auto-capable').value:true),
             callbacks:{
                 onOverflowChanged:toggleNavButton
             }

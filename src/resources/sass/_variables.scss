@@ -18,6 +18,9 @@ $themes:(
 );
 
 $color_palette:(
+    "default":(
+        "color":#e0e6eb,"font-color":#616c76
+    ),
     "primary":(
         "color":#319DB5,"font-color":#fff
     ),
@@ -25,7 +28,7 @@ $color_palette:(
         "color":#1E6170,"font-color":#fff
     ),
     "info":(
-        "color":#e6d9b2,"font-color":#252525
+        "color":#f1cb5a,"font-color":#252525
     ),
     "danger":(
         "color":#C75757,"font-color":#fff
