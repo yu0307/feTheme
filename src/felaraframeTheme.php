@@ -17,6 +17,7 @@ class felaraframeTheme implements feTheme {
                 'headerstyles'=>[
                     'bootstrap5beta/css/bootstrap.css',
                     'fontawesome5.15.2/css/all.css',
+                    'animate/animate.min.css',
                     'OverlayScrollbars-1.13.1/css/OverlayScrollbars.css',
                     'css/util.css',
                     'css/frame.css'
@@ -24,7 +25,8 @@ class felaraframeTheme implements feTheme {
                 'headerscripts'=>[
                     'bootstrap5beta/js/bootstrap.bundle.js',
                     'OverlayScrollbars-1.13.1/js/OverlayScrollbars.js',
-                    'js/app.js'
+                    'js/app.js',
+                    'js/util.js'
                 ]
             ];
         }else{
@@ -32,6 +34,7 @@ class felaraframeTheme implements feTheme {
                 'headerstyles'=>[
                     'bootstrap5beta/css/bootstrap.min.css',
                     'fontawesome5.15.2/css/all.min.css',
+                    'animate/animate.min.css',
                     'OverlayScrollbars-1.13.1/css/OverlayScrollbars.min.css',
                     'css/util.min.css',
                     'css/frame.min.css'
@@ -39,7 +42,8 @@ class felaraframeTheme implements feTheme {
                 'headerscripts'=>[
                     'bootstrap5beta/js/bootstrap.bundle.min.js',
                     'OverlayScrollbars-1.13.1/js/OverlayScrollbars.min.js',
-                    'js/app.min.js'
+                    'js/app.min.js',
+                    'js/util.min.js',
                 ]
             ];
         }
