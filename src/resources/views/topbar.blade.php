@@ -2,7 +2,7 @@
 @php
     $newMails=$newMails??app()->FeFrame->COMs()->getMessage();
 @endphp
-    <div class="col d-flex topbar-controls ">
+    <div class="col d-flex topbar-controls align-items-center">
         <div class="toggleTarget d-md-none border-0" tg-target="#sidebar-left">
             <i class="fas fa-bars fa-lg" onclick="window.fe_frame.toggleClass(this,'fa-times')"></i>
         </div>

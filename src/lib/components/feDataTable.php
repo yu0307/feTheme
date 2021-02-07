@@ -25,6 +25,6 @@ class feDataTable extends Component
      */
     public function render()
     {
-        return view('fe_theme::components.DataTable');
+        return view('fe_theme::components.DataTables');
     }
 }

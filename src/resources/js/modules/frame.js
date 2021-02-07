@@ -43,7 +43,20 @@ function toggleNavButton(e){
     });
 }
 
-function documentReady() {
+function ready(refCall=null){
+    if(typeof refCall ==='function'){
+        if (
+            document.readyState === "complete" ||
+            (document.readyState !== "loading" && !document.documentElement.doScroll)
+        ) {
+            refCall();
+        } else {
+            document.addEventListener("DOMContentLoaded", refCall);
+        }
+    };    
+}
+
+ready(()=>{
     document.querySelectorAll('.toggleTarget').forEach((elm)=>{
         elm.addEventListener('click',toggleControl);
     });
@@ -54,7 +67,7 @@ function documentReady() {
         OverlayScrollbars(elm.querySelector('.scroll-container'), { 
             className : "os-theme-dark",
             scrollbars:{autoHide : "leave"},
-            sizeAutoCapable:(elm.attributes.getNamedItem('size-auto-capable')?elm.attributes.getNamedItem('size-auto-capable').value:true),
+            sizeAutoCapable:(elm.attributes.getNamedItem('size-auto-capable')?!!(elm.attributes.getNamedItem('size-auto-capable').value):true),
             callbacks:{
                 onOverflowChanged:toggleNavButton
             }
@@ -63,17 +76,9 @@ function documentReady() {
             elm.addEventListener('click',scrollControl);
         })
     });
-}
-
-if (
-    document.readyState === "complete" ||
-    (document.readyState !== "loading" && !document.documentElement.doScroll)
-) {
-    documentReady();
-} else {
-    document.addEventListener("DOMContentLoaded", documentReady);
-}
+});
 
 export default {
-    toggleClass: toggleClass
+    toggleClass,
+    ready
 }
