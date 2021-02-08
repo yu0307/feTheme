@@ -4,15 +4,10 @@ namespace feiron\fe_theme\lib\components;
 
 use Illuminate\View\Component;
 
-class feFileUpload extends Component
+class feUploader extends Component
 {
-    public $action;
-    public $id;
-    public $multiple;
-
     public function __construct()
     {
-
     }
 
     /**
