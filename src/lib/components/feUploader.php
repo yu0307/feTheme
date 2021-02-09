@@ -17,6 +17,6 @@ class feUploader extends Component
      */
     public function render()
     {
-        return view('fe_theme::components.FileUpload');
+        return view('fe_theme::components.form.FileUpload');
     }
 }
