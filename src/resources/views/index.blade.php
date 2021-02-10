@@ -28,7 +28,7 @@
 				<div class="row main h-100 w-100">
 					<div class="col p-2 custom-scroll" size-auto-capable='false'>
 						<div class="main-content scroll-container h-100">
-							<main>
+							<main class="h-100">
 								@yield('main-content')
 							</main>
 						</div>

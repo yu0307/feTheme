@@ -41,7 +41,7 @@
                                     <div>
                                         <strong>{{$mail->Sender->name??'System'}}</strong> 
                                         <small class="float-end text-muted me-1">
-                                            <i class="far fa-clock me-1 fa-sm"></i>{{$mail->created_at->format('(D)M-d Y')}}
+                                            <i class="far fa-clock me-1 fa-sm"></i>{{($mail->created_at)?$mail->created_at->format('(D)M-d Y'):''}}
                                         </small>
                                     </div>
                                     <p>{!!Illuminate\Support\Str::limit($mail->subject,150,' ...')!!}</p>

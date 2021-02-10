@@ -419,6 +419,10 @@ a {
   text-decoration: none;
 }
 
+.cur-pointer {
+  cursor: pointer;
+}
+
 body .btn {
   -webkit-font-smoothing: subpixel-antialiased;
   -webkit-transition: border 0.25s linear, color 0.25s linear, background-color 0.25s linear;
