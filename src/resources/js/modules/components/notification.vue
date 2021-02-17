@@ -5,7 +5,6 @@
                 <div class="row mb-sm-1">
                     <div class="col justify-content-between align-items-center d-flex">
                         <h2 style="width:30%" class="c-dark fw-bold fs-md-1 fs-sm-2 text-capitalize d-inline-flex">{{label}}</h2>
-                        <input  style="width:40%" class="form-control d-inline-flex" type="text" placeholder="Search ..." aria-label="Search">
                     </div>
                 </div>
                 <div class="row justify-content-between align-items-center fs-6 mt-sm-2 mt-md-0">
@@ -23,17 +22,23 @@
                                 <h3>Loading</h3>
                                 <i class="fas p-0 fa-spinner fa-spin"></i>
                             </div>
-                            <ul v-show="!loadingList" class="py-2 no-decoration">
-                                <li v-for="message in notifications" :key="message.id" class="my-2 p-2 cur-pointer notification-item">
-                                    <div class="row align-items-center" @click="load_notification(message.id)">
-                                        <div class="col-8 text-capitalize d-flex align-items-center">
-                                            <i :class="[message.metaInfo.status=='new' ? 'fa-envelope' : 'fa-envelope-open', 'far fa-lg  me-md-3 me-sm-2']"></i>
-                                            <div class="text-truncate d-inline-block text-truncate">{{message.title}}</div>
+                            <div v-show="hasNotifications">
+                                <ul v-show="!loadingList" class="py-2 no-decoration">
+                                    <li v-for="message in notifications" :key="message.id" class="my-2 p-2 cur-pointer notification-item">
+                                        <div class="row align-items-center" @click="load_notification(message.id)">
+                                            <div class="col-8 text-capitalize d-flex align-items-center">
+                                                <i :class="[message.metaInfo.status=='new' ? 'fa-envelope' : 'fa-envelope-open', 'far fa-lg  me-md-3 me-sm-2']"></i>
+                                                <div class="text-truncate d-inline-block text-truncate">{{message.title}}</div>
+                                            </div>
+                                            <div class="col-4 text-end fs-6 text-muted">{{message.metaInfo.timeStamp}}</div>
                                         </div>
-                                        <div class="col-4 text-end fs-6 text-muted">{{message.metaInfo.timeStamp}}</div>
-                                    </div>
-                                </li>
-                            </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div v-show="!hasNotifications && !loadingList" >
+                                <h3 class="text-center text-capitalize">We have no messages ...</h3>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -105,6 +110,9 @@ export default {
     computed:{
         hasNotification(){
             return !(_.isEmpty(this.notification.title)&&_.isEmpty(this.notification.content));
+        },
+        hasNotifications(){
+            return !(_.isEmpty(this.notifications));
         }
     },
     mounted(){
@@ -140,7 +148,7 @@ export default {
                     }
                 })
                 .catch(error=>{
-                    window.frameUtil.Notify(error.toJSON(), 'error');
+                    window.frameUtil.Notify(error, 'error');
                 })
                 .then(()=>{
                     this.loadingContent=false;
@@ -172,7 +180,7 @@ export default {
                 )
                 .catch(
                     function (error) {
-                        window.frameUtil.Notify(error.toJSON(), 'error');
+                        window.frameUtil.Notify(error, 'error');
                     }.bind(this)
                 ).then(()=>{
                     this.loadingList=false;
@@ -191,7 +199,7 @@ export default {
                     }
                 })
                 .catch(error=>{
-                    window.frameUtil.Notify(error.toJSON(), 'error');
+                    window.frameUtil.Notify(error, 'error');
                 })
                 .then(()=>{
                     this.loadingContent=false;

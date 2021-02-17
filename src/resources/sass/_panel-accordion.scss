@@ -34,6 +34,7 @@
             }
         }
         .panel-collapse {
+            border: none;
             .panel-body {
                 background: #f7f7f7;
                 border: none !important;
@@ -106,7 +107,6 @@
             }
         }
     }
-
     @each $key, $color in variables.$color_palette {
         .panel-accordion.#{$key}-accordion {
             a {

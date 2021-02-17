@@ -2477,6 +2477,9 @@ body .panel-accordion .panel {
 body .panel-accordion .panel h4 > a:not(.collapsed) {
   background-color: #f3f3f3;
 }
+body .panel-accordion .panel-collapse {
+  border: none;
+}
 body .panel-accordion .panel-collapse .panel-body {
   background: #f7f7f7;
   border: none !important;
@@ -2949,6 +2952,509 @@ body .panel-accordion.aero-accordion .panel-heading .panel-title > a:after {
   float: right;
   font-family: "line-icons" !important;
 }
+body .form-control {
+  background-color: var(--gray-light);
+  border: 1px solid var(--gray-light);
+  box-shadow: none !important;
+  color: var(--gray-light-color);
+  display: inline-block;
+  font-size: 13px;
+  height: auto;
+  line-height: normal;
+  padding: 9px 12px 8px;
+  vertical-align: middle;
+  width: 100%;
+  border-radius: 2px;
+  transition: all 0.2s ease-out;
+}
+body .form-control::-webkit-input-placeholder {
+  color: var(--gray-light-color);
+}
+body .form-control:-moz-placeholder {
+  color: var(--gray-light-color);
+}
+body .form-control::-moz-placeholder {
+  color: var(--gray-light-color);
+}
+body .form-control:-ms-input-placeholder {
+  color: var(--gray-light-color);
+}
+body .form-control:focus {
+  background-color: var(--white) !important;
+  border-color: #A0BDDA;
+  border: 1px solid #CFD2D6;
+  box-shadow: none;
+  outline: none;
+  outline: none !important;
+}
+body .form-control[class*=bg-] {
+  color: #121212 !important;
+}
+body .form-control[class*=bg-]::-webkit-input-placeholder {
+  color: var(--dark-color);
+}
+body .form-control[class*=bg-]:-moz-placeholder {
+  color: var(--dark-color);
+}
+body .form-control[class*=bg-]::-moz-placeholder {
+  color: var(--dark-color);
+}
+body .form-control[class*=bg-]:-ms-input-placeholder {
+  color: var(--dark-color);
+}
+body input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px white inset !important;
+}
+body .form-control.form-white {
+  background-color: var(--white);
+  border: 1px solid var(--default);
+  color: var(--default-color);
+}
+body .form-control.form-white:hover {
+  background-color: var(--white) !important;
+  border: 1px solid #C5C8CB;
+  color: var(--default-color);
+  outline: none;
+}
+body .form-control.form-white:focus {
+  background-color: var(--white) !important;
+  border: 1px solid #C5C8CB;
+  color: var(--default-color);
+  outline: none;
+}
+body .form-control.form-white:visited {
+  background-color: var(--white) !important;
+  border: 1px solid #C5C8CB;
+  color: var(--default-color);
+  outline: none;
+}
+body .form-white ~ .bootstrap-tagsinput {
+  background-color: var(--white) !important;
+  border: 1px solid var(--default) !important;
+}
+body .form-control.form-dark {
+  background-color: var(--dark);
+  border: 1px solid var(--dark-active);
+  color: var(--dark-color);
+}
+body .form-control.form-dark:hover, body .form-control.form-dark:focus, body .form-control.form-dark:visited {
+  background-color: var(--dark-hover) !important;
+  border: 1px solid var(--dark-active);
+  color: var(--dark-color);
+  outline: none;
+}
+body .form-control.input-lg {
+  font-size: 18px !important;
+  height: 46px !important;
+  line-height: 1.33;
+  padding: 10px 16px;
+  border-radius: 6px;
+}
+body .form-control.input-sm {
+  font-size: 12px !important;
+  height: 30px !important;
+  line-height: 1.5;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+body .editableform .form-control {
+  padding-right: 26px !important;
+}
+body .editableform .btn.btn-sm {
+  margin-right: 0 !important;
+  padding-right: 6px !important;
+  padding: 7px 0 !important;
+}
+body .div_checkbox {
+  margin-top: 0px;
+  position: relative;
+}
+body .input-icon {
+  position: relative;
+}
+body .input-icon i {
+  color: #e5eaec;
+  display: block;
+  font-size: 16px;
+  height: 16px;
+  margin: 10px;
+  position: absolute;
+  text-align: center;
+  width: 16px;
+}
+body .input-icon input {
+  padding-left: 34px !important;
+}
+body .input-icon.right input {
+  padding-left: 10px !important;
+  padding-right: 34px !important;
+}
+body .input-icon.right i {
+  margin: 10px 0 10px;
+  right: 17px;
+}
+body .form-horizontal .control-label, body .form-horizontal .radio, body .form-horizontal .checkbox, body .form-horizontal .radio-inline, body .form-horizontal .checkbox-inline {
+  margin-bottom: 7px;
+  margin-top: 0;
+  padding-top: 0px;
+}
+body .form-horizontal .control-label {
+  color: #3E484E;
+  text-align: left;
+  top: 10px;
+}
+body .form-horizontal .prepend-icon i {
+  left: 15px;
+}
+body .form-horizontal .append-icon i {
+  right: 15px;
+}
+body .form-horizontal .form-group {
+  text-align: left;
+}
+body .form-horizontal .row .col-md-12 {
+  margin-left: 15px;
+}
+body .bg-dark .form-horizontal .control-label {
+  color: #adadad;
+}
+body .bg-dark .form-error {
+  color: var(--dark-color);
+}
+body .bg-dark .form-success {
+  color: var(--dark-color);
+}
+body .input-group-addon {
+  border: none;
+}
+body .append-icon {
+  position: relative;
+}
+body .append-icon input {
+  padding-right: 36px;
+}
+body .append-icon i {
+  color: var(--dark);
+  font-size: 14px;
+  height: 34px;
+  left: auto;
+  line-height: 34px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 36px;
+}
+body .append-icon .input-lg ~ i {
+  font-size: 20px;
+  height: 46px;
+  line-height: 46px;
+  width: 46px;
+}
+body .append-icon .form-dark ~ i {
+  color: var(--dark-color);
+}
+body .prepend-icon {
+  position: relative;
+}
+body .prepend-icon input {
+  padding-left: 36px;
+}
+body .prepend-icon span {
+  padding-left: 36px;
+}
+body .prepend-icon i {
+  color: var(--dark);
+  font-size: 14px;
+  height: 34px;
+  left: 0;
+  line-height: 34px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 36px;
+}
+body .prepend-icon .form-dark ~ i {
+  color: var(--dark-color);
+}
+body .form-inline .append-icon {
+  display: inherit !important;
+}
+body .form-inline .prepend-icon {
+  display: inherit !important;
+}
+body .form-inline .after-tooltip {
+  display: inherit !important;
+}
+body .form-inline .before-tooltip {
+  display: inherit !important;
+}
+body .form-inline .inside-tooltip {
+  display: inherit !important;
+}
+body .form-inline label {
+  margin-right: 10px;
+}
+body .prepend-icon[class*=bg-] ~ i {
+  color: var(--dark-color);
+}
+body .append-icon[class*=bg-] ~ i {
+  color: var(--dark-color);
+}
+body .after-tooltip i {
+  color: var(--dark);
+  display: block;
+  float: right;
+  font-size: 16px;
+  height: 34px;
+  left: auto;
+  line-height: 34px;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 20%;
+}
+body .after-tooltip input {
+  float: left;
+  width: 80%;
+}
+body .after-tooltip .input-lg ~ i {
+  font-size: 20px;
+  height: 46px;
+  line-height: 46px;
+  width: 46px;
+}
+body .after-tooltip input.input-sm ~ i {
+  height: 33px;
+  line-height: 33px;
+}
+body .before-tooltip i {
+  color: var(--dark);
+  font-size: 16px;
+  height: 34px;
+  left: -18px;
+  line-height: 34px;
+  position: absolute;
+  right: auto;
+  text-align: center;
+  top: 0;
+  width: 36px;
+}
+body .before-tooltip i.fa {
+  font-size: 20px;
+}
+body .before-tooltip .input-lg ~ i {
+  font-size: 20px;
+  height: 46px;
+  line-height: 46px;
+  width: 46px;
+}
+body .before-tooltip .input-sm ~ i {
+  font-size: 16px;
+  height: 33px;
+  line-height: 33px;
+  width: 33px;
+}
+body .inside-tooltip {
+  position: relative;
+}
+body .inside-tooltip i {
+  color: var(--dark);
+  font-size: 14px;
+  height: 34px;
+  left: 0;
+  line-height: 34px;
+  position: absolute;
+  right: auto;
+  text-align: center;
+  top: 0;
+  width: 36px;
+}
+body .inside-tooltip i.fa {
+  font-size: 20px;
+}
+body .inside-tooltip .form-dark ~ i {
+  color: var(--dark-color);
+}
+body .inside-tooltip input {
+  padding-left: 36px;
+  padding-right: 0;
+}
+body .inside-tooltip input.input-sm {
+  padding-left: 28px;
+  padding-left: 36px;
+  padding-right: 0;
+}
+body .inside-tooltip span {
+  padding-left: 36px;
+  padding-right: 0;
+}
+body .inside-tooltip input.input-lg {
+  padding-left: 42px;
+}
+body .inside-tooltip input.input-lg ~ i {
+  font-size: 26px;
+  left: 22px;
+  line-height: 48px;
+}
+body .inside-tooltip input.input-sm ~ i {
+  font-size: 15px;
+  left: 15px;
+  line-height: 33px;
+}
+body [class*=col-].inside-tooltip input ~ i {
+  left: 15px;
+}
+body form .custom-file {
+  bottom: 0;
+  cursor: pointer;
+  height: 100%;
+  opacity: 0;
+  padding: 8px 10px;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  z-index: 11;
+}
+body form .file-button {
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+  float: none;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 16px;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  z-index: 10;
+}
+body fieldset {
+  border: 1px solid #E5E5E5;
+  margin-top: 20px;
+  padding: 20px;
+}
+body legend {
+  border-bottom: none;
+  font-size: 15px;
+  margin-bottom: 0;
+  padding: 0 10px;
+  width: auto;
+}
+body .form-stripped {
+  margin: 0 -20px -10px -20px;
+}
+body .form-stripped .form-group {
+  margin: 0;
+  padding: 10px 0;
+}
+body .form-stripped .form-group:nth-child(odd) {
+  background-color: #F4F4F4;
+}
+body .form-right .control-label {
+  text-align: right;
+}
+body .page-content.condensed {
+  padding: 1px 10px 50px;
+}
+body .condensed .form-group {
+  margin-bottom: 5px;
+}
+body .condensed .icheck-list > label {
+  margin-bottom: 5px;
+}
+body .condensed fieldset {
+  margin-top: 10px;
+  padding: 10px;
+}
+body .main-content .page-content .panel .panel-content .input-group i {
+  padding-left: 0;
+  padding-right: 0;
+}
+body .input-group input {
+  min-width: 50px;
+}
+body .input-group .fa.fa-angle-up {
+  font-size: 12px;
+}
+body .input-group .fa.fa-angle-down {
+  font-size: 12px;
+}
+body .input-group-btn:last-child > .btn {
+  font-family: arial;
+}
+body .input-group-btn:last-child > .btn-group {
+  font-family: arial;
+}
+body .input-group-btn:first-child > .btn.btn-white {
+  border-right: 0 !important;
+  margin-top: -1px;
+  padding: 6px 24px 7px;
+}
+body .input-group-btn:last-child > .btn.btn-white {
+  border-left: 0 !important;
+  margin-top: -1px;
+  padding: 6px 24px 7px;
+}
+body input.form-error, body input.form-error.form-control:focus, body textarea.form-error, body textarea.form-error.form-control:focus {
+  background-color: #F7F2F2 !important;
+  border: 1px solid #EED3D7 !important;
+  color: var(--danger) !important;
+}
+body .form-error {
+  color: var(--danger);
+  font-style: italic;
+  margin-top: 10px;
+}
+body .form-success {
+  color: var(--info-color);
+  font-style: italic;
+  margin-top: 10px;
+}
+body input.error {
+  background-color: #F7F2F2 !important;
+  border: 1px solid #EED3D7 !important;
+  color: var(--danger) !important;
+}
+body label.error {
+  color: var(--danger);
+}
+body .form-control.form-error {
+  color: var(--danger-color);
+  margin-top: 0;
+}
+body .form-control.form-success {
+  color: var(--danger-color);
+  margin-top: 0;
+}
+body input.form-success, body input.form-success.form-control:focus, body textarea.form-success, body textarea.form-success.form-control:focus {
+  background-color: #DFF0D8 !important;
+  border: 1px solid #D6E9C6 !important;
+  color: var(--success) !important;
+}
+body .field {
+  display: block;
+  position: relative;
+}
+@media (max-width: 768px) {
+  body .form-horizontal .control-label, body .form-horizontal .radio, body .form-horizontal .checkbox, body .form-horizontal .radio-inline, body .form-horizontal .checkbox-inline {
+    margin-bottom: 15px;
+  }
+  body .col-md-5.border-right .col-md-6.border-right, body .col-md-7.border-right, body .col-md-8.border-right, body .col-md-9.border-right, body .col-md-10.border-right, body .col-md-11.border-right, body .col-md-12.border-right {
+    border-right: none !important;
+  }
+  body .form-horizontal .row .col-md-12 {
+    margin-left: 0;
+  }
+  body .form-horizontal .btn {
+    width: 100%;
+  }
+  body .form-inline {
+    margin-left: 15px;
+  }
+  body .form-inline .form-group.m-r-20 {
+    margin-right: 0 !important;
+  }
+}
 body .main-content {
   padding: 5px;
 }
@@ -3265,6 +3771,9 @@ body .main-content .panel-stat-chart {
 }
 body ul {
   border-width: 0px !important;
+}
+body .noty_body p {
+  font-size: 12px;
 }
 
 .noty_layout_mixin, #noty_layout__centerRight, #noty_layout__centerLeft, #noty_layout__center, #noty_layout__bottomRight, #noty_layout__bottomCenter, #noty_layout__bottomLeft, #noty_layout__bottom, #noty_layout__topRight, #noty_layout__topCenter, #noty_layout__topLeft, #noty_layout__top {

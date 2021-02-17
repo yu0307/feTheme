@@ -43,20 +43,7 @@ function toggleNavButton(e){
     });
 }
 
-function ready(refCall=null){
-    if(typeof refCall ==='function'){
-        if (
-            document.readyState === "complete" ||
-            (document.readyState !== "loading" && !document.documentElement.doScroll)
-        ) {
-            refCall();
-        } else {
-            document.addEventListener("DOMContentLoaded", refCall);
-        }
-    };    
-}
-
-ready(()=>{
+window.ready(()=>{
     document.querySelectorAll('.toggleTarget').forEach((elm)=>{
         elm.addEventListener('click',toggleControl);
     });
@@ -79,6 +66,5 @@ ready(()=>{
 });
 
 export default {
-    toggleClass,
-    ready
+    toggleClass
 }

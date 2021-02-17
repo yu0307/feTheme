@@ -44,6 +44,9 @@ body {
 .body a {
   color: var(--primary-font-color);
 }
+.body p {
+  font-size: 0.8rem;
+}
 .body .container-fluid .nav-bar {
   height: 46px;
   max-height: 46px;
@@ -160,7 +163,7 @@ body {
 .body .container-fluid .row .left-panel .nav-menu a {
   display: block;
   text-decoration: none;
-  padding: 0px 10px;
+  padding: 0.25rem 10px;
 }
 .body .container-fluid .row .left-panel .nav-menu ul {
   list-style: none;
@@ -218,8 +221,7 @@ section.main {
 #notifications-header .dropdown-menu, #user-header .dropdown-menu {
   padding: 0px;
   left: auto;
-  right: 0px !important;
-  margin-top: 5px;
+  right: 7px !important;
 }
 #notifications-header .dropdown-menu a, #user-header .dropdown-menu a {
   padding: 10px 12px;
@@ -258,19 +260,35 @@ section.main {
   border-radius: 8px;
 }
 #notifications-header .dropdown-menu {
+  top: 85%;
   background: var(--nav-bar-bg-color);
   color: var(--nav-bar-font-color);
+}
+#notifications-header .dropdown-menu .topbar-notification {
+  width: 200px;
+  max-width: 200px;
+  max-height: 30vh;
 }
 #notifications-header .dropdown-menu .dropdown-header {
   background: var(--left-panel-bg-color);
   color: var(--left-panel-font-color);
 }
+#notifications-header .dropdown-menu .dropdown-header p {
+  font-size: 12px;
+}
+#notifications-header .dropdown-menu .message strong {
+  color: var(--dark);
+}
 #notifications-header .dropdown-menu .message small {
   font-size: 12px;
 }
 #notifications-header .dropdown-menu .message p {
+  margin-bottom: 5px;
   font-style: italic;
   font-size: 12px;
+}
+#notifications-header .dropdown-menu .message a {
+  padding: 0px;
 }
 
 #user-header .usr-img {

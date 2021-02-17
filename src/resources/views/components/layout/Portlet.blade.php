@@ -5,7 +5,7 @@
     </div>
     @endisset
 
-    <div class="panel-content">
+    <div class="panel-content h-100">
         {{ $slot }}
     </div>
     

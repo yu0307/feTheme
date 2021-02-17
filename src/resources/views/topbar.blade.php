@@ -29,27 +29,29 @@
                     <i class="far fa-bell fa-lg"></i>
                     <span class="badge bg-danger badge-header">{{$newMails?count($newMails):''}}</span>
                 </a>
-                <ul class="dropdown-menu">
-                    <li class="fan"></li>
-                    <li class="dropdown-header clearfix">
-                        <p class="m-0 float-end">you have {{count($newMails)??0}} New Notifications</p>
-                    </li>
-                    @foreach ($newMails??[] as $mail)
-                        <li class="clearfix message p-2">
-                            <div class="clearfix bd-green border-bottom p-5">
-                                <a href="{{route('LF_Notifications',['MID'=>$mail->id])}}">
-                                    <div>
-                                        <strong>{{$mail->Sender->name??'System'}}</strong> 
-                                        <small class="float-end text-muted me-1">
-                                            <i class="far fa-clock me-1 fa-sm"></i>{{($mail->created_at)?$mail->created_at->format('(D)M-d Y'):''}}
-                                        </small>
-                                    </div>
-                                    <p>{!!Illuminate\Support\Str::limit($mail->subject,150,' ...')!!}</p>
-                                </a>
-                            </div>
+                <div class="dropdown-menu custom-scroll">
+                    <ul class="no-decoration p-0 topbar-notification scroll-container">
+                        <li class="fan"></li>
+                        <li class="dropdown-header clearfix">
+                            <p class="m-0 float-end">you have {{count($newMails)??0}} New Notifications</p>
                         </li>
-                    @endforeach
-                </ul>
+                        @foreach ($newMails??[] as $mail)
+                            <li class="clearfix message p-2">
+                                <div class="clearfix bd-green border-bottom">
+                                    <a href="{{route('LF_Notifications',['MID'=>$mail->id])}}">
+                                        <div>
+                                            <strong>{{$mail->Sender->name??'System'}}</strong> 
+                                            <small class="float-end text-muted me-1">
+                                                <i class="far fa-clock me-1 fa-sm"></i>{{($mail->created_at)?$mail->created_at->format('(D)M-d Y'):''}}
+                                            </small>
+                                        </div>
+                                        <p class="text-truncate">{!!Illuminate\Support\Str::limit($mail->subject,150,' ...')!!}</p>
+                                    </a>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
             </li>
 
             <li class="dropdown position-relative" id="user-header">

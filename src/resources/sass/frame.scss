@@ -26,7 +26,9 @@ body{
     a{
         color: var(--primary-font-color);
     }
-
+    p{
+        font-size: 0.8rem;
+    }
     .container-fluid{
         .nav-bar{
             height: 46px;
@@ -149,7 +151,7 @@ body{
                     a{
                         display: block;
                         text-decoration: none;
-                        padding: 0px 10px;
+                        padding: 0.25rem 10px;
                     }
                     ul{
                         list-style: none;
@@ -221,8 +223,7 @@ section.main{
     .dropdown-menu{
         padding: 0px;
         left: auto;
-        right: 0px !important;
-        margin-top: 5px;
+        right: 7px !important;
         a{
             padding: 10px 12px;
             color: var(--left-panel-font-color);
@@ -263,19 +264,35 @@ section.main{
         border-radius: 8px;
     }
     .dropdown-menu{
+        top: 85%;
+        .topbar-notification{
+            width: 200px;
+            max-width: 200px;
+            max-height: 30vh;
+        }
         background: var(--nav-bar-bg-color);
         color: var(--nav-bar-font-color);
         .dropdown-header{
             background: var(--left-panel-bg-color);
             color: var(--left-panel-font-color);
+            p{
+                font-size: 12px;
+            }
         }
         .message{
+            strong{
+                color: var(--dark);
+            }
             small{
                 font-size: 12px;
             }
             p{
+                margin-bottom: 5px;
                 font-style: italic;
                 font-size: 12px;
+            }
+            a{
+                padding: 0px;
             }
         }
     }
