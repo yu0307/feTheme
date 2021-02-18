@@ -37,10 +37,9 @@ class FeThemeServiceProvider extends ServiceProvider {
                                 ])
                     );
         app()->frameOutlet->bindOutlet('Fe_FrameOutlet', new \feiron\felaraframe\lib\outlet\feOutlet([
-            'view' => 'felaraframe::ThemeManagement',
+            'view' => 'fe_theme::ThemeManagement',
             'myName' => 'Theme Management',
             'resource' => [
-                asset('/feiron/felaraframe/js/sidebar_hover.js'),
                 asset('/feiron/felaraframe/js/ThemeManagement.js')
             ]
         ]));

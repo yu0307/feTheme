@@ -1813,7 +1813,7 @@ body .nav-tabs.nav-pink > li > a::before {
 body .nav-tabs.nav-aero > li > a::before {
   background-color: var(--aero);
 }
-body .nav-tabs .active a::before {
+body .nav-tabs a.active::before {
   width: 100%;
   transform: scale(1);
 }
@@ -2953,39 +2953,40 @@ body .panel-accordion.aero-accordion .panel-heading .panel-title > a:after {
   font-family: "line-icons" !important;
 }
 body .form-control {
-  background-color: var(--gray-light);
-  border: 1px solid var(--gray-light);
+  background-color: var(--default);
+  border: 1px solid var(--default);
   box-shadow: none !important;
-  color: var(--gray-light-color);
+  color: var(--default-color);
   display: inline-block;
   font-size: 13px;
   height: auto;
   line-height: normal;
-  padding: 9px 12px 8px;
+  padding: 7px 12px;
   vertical-align: middle;
   width: 100%;
   border-radius: 2px;
   transition: all 0.2s ease-out;
 }
 body .form-control::-webkit-input-placeholder {
-  color: var(--gray-light-color);
+  color: var(--default-color);
 }
 body .form-control:-moz-placeholder {
-  color: var(--gray-light-color);
+  color: var(--default-color);
 }
 body .form-control::-moz-placeholder {
-  color: var(--gray-light-color);
+  color: var(--default-color);
 }
 body .form-control:-ms-input-placeholder {
-  color: var(--gray-light-color);
+  color: var(--default-color);
 }
 body .form-control:focus {
-  background-color: var(--white) !important;
-  border-color: #A0BDDA;
-  border: 1px solid #CFD2D6;
+  background-color: var(--gray-light) !important;
+  border-color: var(--gray-light);
+  border: 1px solid var(--gray-light);
   box-shadow: none;
   outline: none;
   outline: none !important;
+  color: var(--gray-light-color);
 }
 body .form-control[class*=bg-] {
   color: #121212 !important;
@@ -3012,19 +3013,19 @@ body .form-control.form-white {
 }
 body .form-control.form-white:hover {
   background-color: var(--white) !important;
-  border: 1px solid #C5C8CB;
+  border: 1px solid #c5c8cb;
   color: var(--default-color);
   outline: none;
 }
 body .form-control.form-white:focus {
   background-color: var(--white) !important;
-  border: 1px solid #C5C8CB;
+  border: 1px solid #c5c8cb;
   color: var(--default-color);
   outline: none;
 }
 body .form-control.form-white:visited {
   background-color: var(--white) !important;
-  border: 1px solid #C5C8CB;
+  border: 1px solid #c5c8cb;
   color: var(--default-color);
   outline: none;
 }
@@ -3093,13 +3094,17 @@ body .input-icon.right i {
   margin: 10px 0 10px;
   right: 17px;
 }
-body .form-horizontal .control-label, body .form-horizontal .radio, body .form-horizontal .checkbox, body .form-horizontal .radio-inline, body .form-horizontal .checkbox-inline {
+body .form-horizontal .control-label,
+body .form-horizontal .radio,
+body .form-horizontal .checkbox,
+body .form-horizontal .radio-inline,
+body .form-horizontal .checkbox-inline {
   margin-bottom: 7px;
   margin-top: 0;
   padding-top: 0px;
 }
 body .form-horizontal .control-label {
-  color: #3E484E;
+  color: #3e484e;
   text-align: left;
   top: 10px;
 }
@@ -3329,7 +3334,7 @@ body form .file-button {
   z-index: 10;
 }
 body fieldset {
-  border: 1px solid #E5E5E5;
+  border: 1px solid #e5e5e5;
   margin-top: 20px;
   padding: 20px;
 }
@@ -3348,7 +3353,7 @@ body .form-stripped .form-group {
   padding: 10px 0;
 }
 body .form-stripped .form-group:nth-child(odd) {
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
 }
 body .form-right .control-label {
   text-align: right;
@@ -3379,6 +3384,9 @@ body .input-group .fa.fa-angle-up {
 body .input-group .fa.fa-angle-down {
   font-size: 12px;
 }
+body .input-group > .form-control:focus, body .input-group > .form-select:focus {
+  z-index: inherit !important;
+}
 body .input-group-btn:last-child > .btn {
   font-family: arial;
 }
@@ -3395,9 +3403,12 @@ body .input-group-btn:last-child > .btn.btn-white {
   margin-top: -1px;
   padding: 6px 24px 7px;
 }
-body input.form-error, body input.form-error.form-control:focus, body textarea.form-error, body textarea.form-error.form-control:focus {
-  background-color: #F7F2F2 !important;
-  border: 1px solid #EED3D7 !important;
+body input.form-error,
+body input.form-error.form-control:focus,
+body textarea.form-error,
+body textarea.form-error.form-control:focus {
+  background-color: #f7f2f2 !important;
+  border: 1px solid #eed3d7 !important;
   color: var(--danger) !important;
 }
 body .form-error {
@@ -3411,8 +3422,8 @@ body .form-success {
   margin-top: 10px;
 }
 body input.error {
-  background-color: #F7F2F2 !important;
-  border: 1px solid #EED3D7 !important;
+  background-color: #f7f2f2 !important;
+  border: 1px solid #eed3d7 !important;
   color: var(--danger) !important;
 }
 body label.error {
@@ -3426,9 +3437,12 @@ body .form-control.form-success {
   color: var(--danger-color);
   margin-top: 0;
 }
-body input.form-success, body input.form-success.form-control:focus, body textarea.form-success, body textarea.form-success.form-control:focus {
-  background-color: #DFF0D8 !important;
-  border: 1px solid #D6E9C6 !important;
+body input.form-success,
+body input.form-success.form-control:focus,
+body textarea.form-success,
+body textarea.form-success.form-control:focus {
+  background-color: #dff0d8 !important;
+  border: 1px solid #d6e9c6 !important;
   color: var(--success) !important;
 }
 body .field {
@@ -3436,10 +3450,20 @@ body .field {
   position: relative;
 }
 @media (max-width: 768px) {
-  body .form-horizontal .control-label, body .form-horizontal .radio, body .form-horizontal .checkbox, body .form-horizontal .radio-inline, body .form-horizontal .checkbox-inline {
+  body .form-horizontal .control-label,
+body .form-horizontal .radio,
+body .form-horizontal .checkbox,
+body .form-horizontal .radio-inline,
+body .form-horizontal .checkbox-inline {
     margin-bottom: 15px;
   }
-  body .col-md-5.border-right .col-md-6.border-right, body .col-md-7.border-right, body .col-md-8.border-right, body .col-md-9.border-right, body .col-md-10.border-right, body .col-md-11.border-right, body .col-md-12.border-right {
+  body .col-md-5.border-right .col-md-6.border-right,
+body .col-md-7.border-right,
+body .col-md-8.border-right,
+body .col-md-9.border-right,
+body .col-md-10.border-right,
+body .col-md-11.border-right,
+body .col-md-12.border-right {
     border-right: none !important;
   }
   body .form-horizontal .row .col-md-12 {

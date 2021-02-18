@@ -76,7 +76,7 @@ class feThemeManager{
                             <div class="ThemeSettingHeading">
                                 <h6>'. ($settings['label']??$key).'</h6>
                             </div>      
-                            ' . app()->feFrame->BuildFormControl($settings, ($valueList[$settings['name']]??null)).'
+                            ' . app()->FeFrame->BuildFormControl($settings, ($valueList[$settings['name']]??null)).'
                           </div>';
             }
         }

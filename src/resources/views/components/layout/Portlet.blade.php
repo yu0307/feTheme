@@ -1,11 +1,11 @@
-<div {{$attributes->merge(['class' => "panel portlet "])}} >
+<div {{$attributes->merge(['class' => "panel portlet d-flex flex-column"])}} >
     @isset($header)
     <div class="panel-header bg-{{$headerBg??'dark'}} {{(($headerControls??false)===true)?'panel-controls':''}}">
         {!!$header??''!!}
     </div>
     @endisset
 
-    <div class="panel-content h-100">
+    <div class="panel-content flex-fill">
         {{ $slot }}
     </div>
     
