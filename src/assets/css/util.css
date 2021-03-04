@@ -402,6 +402,94 @@
   width: 500px;
 }
 
+.ft-5 {
+  font-size: 5px;
+}
+
+.ft-5rem {
+  font-size: 0.5rem;
+}
+
+.ft-6 {
+  font-size: 6px;
+}
+
+.ft-6rem {
+  font-size: 0.6rem;
+}
+
+.ft-7 {
+  font-size: 7px;
+}
+
+.ft-7rem {
+  font-size: 0.7rem;
+}
+
+.ft-8 {
+  font-size: 8px;
+}
+
+.ft-8rem {
+  font-size: 0.8rem;
+}
+
+.ft-9 {
+  font-size: 9px;
+}
+
+.ft-9rem {
+  font-size: 0.9rem;
+}
+
+.ft-10 {
+  font-size: 10px;
+}
+
+.ft-10rem {
+  font-size: 1rem;
+}
+
+.ft-11 {
+  font-size: 11px;
+}
+
+.ft-11rem {
+  font-size: 1.1rem;
+}
+
+.ft-12 {
+  font-size: 12px;
+}
+
+.ft-12rem {
+  font-size: 1.2rem;
+}
+
+.ft-13 {
+  font-size: 13px;
+}
+
+.ft-13rem {
+  font-size: 1.3rem;
+}
+
+.ft-14 {
+  font-size: 14px;
+}
+
+.ft-14rem {
+  font-size: 1.4rem;
+}
+
+.ft-15 {
+  font-size: 15px;
+}
+
+.ft-15rem {
+  font-size: 1.5rem;
+}
+
 * {
   transition: all 0.5s ease;
 }
@@ -3449,6 +3537,14 @@ body .field {
   display: block;
   position: relative;
 }
+body .form-check-input {
+  width: auto;
+  min-width: auto !important;
+  padding: 0.5rem !important;
+}
+body .form-check-input:focus {
+  background-color: #0d6efd !important;
+}
 @media (max-width: 768px) {
   body .form-horizontal .control-label,
 body .form-horizontal .radio,
@@ -3483,7 +3579,7 @@ body .main-content {
   padding: 5px;
 }
 body .main-content .panel {
-  background: var(--light);
+  background: var(--white);
   border-radius: 0;
   border: 1px solid #E2E2E2;
   border: none;

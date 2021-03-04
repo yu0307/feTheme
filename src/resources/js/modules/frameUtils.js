@@ -92,39 +92,73 @@ function BuildFormControls(control, value){
         switch (control.type){
             case 'select':
                 var options='';
-                if ($.isArray(control.options)){
-                    $.each(control.options,function(idx,elm){
-                        options += '<option value="' + elm + '" ' + (elm == value ? 'SELECTED' : '')+'>'+elm+'</option>';
-                    });
-                }
-                return '<select class="form-control" name="' + control.name + '">' + options +'</select >';
+                (control.options||[]).forEach((elm)=>{
+                    options += '<option value="' + elm + '" ' + (elm == value ? 'selected=selected default' : '')+'>'+elm+'</option>';
+                });
+                return '<select class=""form-control form-select"" name="' + control.name + '">' + options +'</select >';
             case 'radio':
                 var options = '';
-                if ($.isArray(control.options)) {
-                    $.each(control.options, function (idx, elm) {
-                        options += '<label><input type="radio" '+ (elm == value ? 'checked' : '')+ ' name="'+control.name+ '" class="form-control" data-radio="iradio_minimal-blue" value="'+elm+ '">'+elm+ '</label>';
-                    });
-                }
-                return '<div class="icheck-inline">' + options + '</div >';
+                (control.options||[]).forEach((elm)=>{
+                    options +=`
+                        <div class="form-check-inline me-2">
+                            <input value="${elm}" class="form-check-input form-control" ${(elm.trim() == value ? 'checked' : '')} type="radio" name="${control.name}">
+                            <label class="form-check-label">
+                                ${elm}
+                            </label>
+                        </div>
+                    `;
+                });
+                return options;
+            case 'switch':
+                return `
+                        <div class="form-check-inline form-switch me-2">
+                            <input class="form-check-input form-control" type="checkbox" toggle ${((control.options||'false') == 'false' ? '' : 'checked')} name="${control.name}" >
+                        </div>
+                    `;
             case 'checkbox':
                 var options = '';
-                if ($.isArray(control.options)) {
-                    $.each(control.options, function (idx, elm) {
-                        options += '<label><input type="checkbox" ' + (elm == value ? 'checked' : '') + ' name="' + control.name + '" class="form-control" data-radio="icheckbox_square-blue" value="'+elm+ '">'+elm+ '</label>';
-                    });
-                }
-                return '<div class="icheck-inline">' + options + '</div >';
+                (control.options||[]).forEach((elm)=>{
+                    options +=`
+                        <div class="form-check-inline me-2">
+                            <input class="form-check-input form-control" ${(elm == value ? 'checked' : '')} type="checkbox" value="${elm}" name="${control.name}">
+                            <label class="form-check-label">${elm}</label>
+                        </div>
+                    `;
+                });
+                return options;
             default:
-                return '<div class="prepend-icon">'+
-                            '<input class="form-control" type = "' + control.type + '" name = "' + control.name + '" value = "'+(control.value ?control:$value)+'" >'+
-                            '<i class="fa fa-indent"></i>'+
-                        '</div >';
+                return `
+                    <div class="prepend-icon">
+                        <input class="form-control form-white" type = "${control.type}" name = "${control.name}" value = "${(control.value||value||"")}" >
+                        <i class="fa fa-indent"></i>
+                    </div>
+                `;
         }
     }
     return '';
 } 
 
+function serialize(root,defaultVal=false){
+    var data = {};
+    root.querySelectorAll('.form-control:not([type="radio"]):not([type="checkbox"])').forEach((elm)=>{
+        data[elm['name']] = elm['value'];
+    });
+    root.querySelectorAll('.form-control[type="radio"]:checked').forEach((elm)=>{
+        data[elm['name']] = elm['value'];
+    });
+    root.querySelectorAll('.form-control[type="checkbox"]:checked').forEach((elm)=>{
+        (data[elm['name']]=(Array.isArray(data[elm['name']]) === true)?data[elm['name']]:[]).push(elm['value']);
+    });
+    root.querySelectorAll('.form-control[type="checkbox"]:not(:checked)').forEach((elm)=>{
+        if (!(elm.getAttribute('name') in data)) {
+            data[elm.getAttribute('name')] = defaultVal;
+        }
+    });
+    return data;
+}
+
 export default {
     Notify:Notify,
-    BuildFormControls:BuildFormControls
+    BuildFormControls:BuildFormControls,
+    serialize
 }

@@ -41,7 +41,7 @@
 @endsection
 
 @section('main-content')
-<x-fe_theme::fe-portlet id="controlPanel" class="bg-white Profile-container h-100 mb-0">
+<x-fe_theme::fe-portlet id="controlPanel" class="bg-white Profile-container h-100 mb-0 overflow-auto">
     <x-slot name="header">
         <h3>Admin Control Panel</h3>
     </x-slot>
@@ -66,17 +66,19 @@
 @push('lastContent')
 <x-fe_theme::fe-modal id="control_CRUD">
     <x-slot name="footer">
-        <div class="row">
-            <div class="buttonSlot col-md-8 col-sm-12">
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <button type="button" class="btn btn-default float-end" data-bs-dismiss="modal">Close</button>
+        <div class="container">
+            <div class="row">
+                <div class="buttonSlot col-md-8 col-sm-12">
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <button type="button" class="btn btn-default float-end" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </x-slot>
     <div class="loading text-center">
         <i class="fas fa-spinner fa-spin fa-3x fa-fw"></i>
-        <h4 class="text-center t-center">Loading Contents ...</h4>
+        <h4 class="text-center t-center fw-light">Loading Contents ...</h4>
     </div>
     <div class="CRUD_ctr_Area">
         <div class="LF_CRUD row" id="General_CRUD">

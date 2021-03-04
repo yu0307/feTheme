@@ -26,6 +26,10 @@ function clearWorkingArea() {
         elm.value="";
         elm.classList.remove('checked');
     });
+    document.querySelectorAll('#control_CRUD select').forEach((elm)=>{
+        elm.value=(elm.querySelector('option[default]')||{value:""}).value;
+        elm.classList.remove('checked');
+    });
     document.querySelectorAll('#control_CRUD input[type="radio"],#control_CRUD input[type="checkbox"]').forEach((elm)=>{
         elm.classList.remove('checked');
     });

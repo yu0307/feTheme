@@ -9,6 +9,8 @@ interface feTheme
 
     public function title():string;
 
+    public function description():string;
+
     public function themeSettings():array;
 
     public function getThemeResources():array;

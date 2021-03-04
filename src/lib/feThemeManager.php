@@ -70,7 +70,7 @@ class feThemeManager{
         foreach($settingList as $key=>$settings){
             $heading=($heading>5)?5:$heading;
             if((false === array_key_exists('type', $settings))){
-                $html.= '<div class="form-row"><h'.$heading.'><strong>'.$key. '</strong></h' . $heading . '>'.$this->RenderSettings($settings, $valueList, $heading+1). '</div>';
+                $html.= '<div class="form-row row"><h'.$heading.'><strong>'.$key. '</strong></h' . $heading . '>'.$this->RenderSettings($settings, $valueList, $heading+1). '</div>';
             }else{
                 $html .= '<div class="ThemeSettings col-md-4 col-sm-12">
                             <div class="ThemeSettingHeading">

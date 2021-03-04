@@ -544,6 +544,15 @@
     position: relative;
   }
 
+  .form-check-input{
+    width: auto;
+    min-width: auto !important;
+    padding: 0.5rem !important;
+    &:focus{
+      background-color:#0d6efd !important;
+    }
+  }
+
   @media (max-width: 768px) {
     .form-horizontal .control-label,
     .form-horizontal .radio,

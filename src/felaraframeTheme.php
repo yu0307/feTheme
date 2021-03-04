@@ -142,4 +142,13 @@ class felaraframeTheme implements feTheme {
         return $this->mySettings;
     }
 
+    public function description():string{
+        return '
+            <h4>This is the default theme provided by the framework. </h4>
+            You are free to make changes on the layout with the options provided below. 
+            For more information on how to use this theme please refer to: <br/>
+            Github <a href="https://github.com/yu0307/LaraFrame" target="_blank">FeLaraFrame</a>
+        ';
+    }
+
 }

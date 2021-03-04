@@ -40,7 +40,7 @@ class FeThemeServiceProvider extends ServiceProvider {
             'view' => 'fe_theme::ThemeManagement',
             'myName' => 'Theme Management',
             'resource' => [
-                asset('/feiron/felaraframe/js/ThemeManagement.js')
+                asset('/feiron/fe_theme/js/modules/ThemeManagement.js')
             ]
         ]));
     }

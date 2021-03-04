@@ -5,6 +5,7 @@ body{
     bottom: 0px;
     left: 0px;
     right: 0px;
+    font-size: 14px;
 }
 
 .body{
@@ -224,6 +225,7 @@ section.main{
         padding: 0px;
         left: auto;
         right: 7px !important;
+        border: none;
         a{
             padding: 10px 12px;
             color: var(--left-panel-font-color);
