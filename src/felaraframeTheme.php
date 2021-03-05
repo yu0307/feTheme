@@ -75,7 +75,7 @@ class felaraframeTheme implements feTheme {
                     'Top Display' => [
                         'type' => 'radio',
                         'options' => ['Profile Image', 'Mini Profile Image', 'Icon','None'],
-                        'default' => 'Icon',
+                        'default' => 'Mini Profile Image',
                         'name' => 'sb_topdisplay'
                     ]
                 ],
@@ -88,22 +88,22 @@ class felaraframeTheme implements feTheme {
                     ]
                 ],
                 'Page'=>[
-                    'Color' => [
+                    'Page Color' => [
                         'type' => 'select',
-                        'options' => ['Primary', 'Dark', 'red', 'green', 'orange', 'purple', 'blue'],
+                        'options' => ['Dark', 'Blue', 'Red', 'Green','Orange','Purple','Navy Blue'],
                         'default' => 'Dark',
                         'name' => 'page_color'
                     ],
                     'Background Color' => [
                         'type' => 'select',
-                        'options' => ['Clean', 'Lighter', 'Light-default', 'Light-blue', 'Light-purple', 'Light-dark'],
-                        'default' => 'Light-blue',
+                        'options' => ['Color1', 'Color2', 'Color3', 'Color4', 'Color5', 'Color6'],
+                        'default' => 'Color4',
                         'name' => 'page_bgcolor'
                     ],
                     'Template Style' => [
                         'type' => 'radio',
-                        'options' => ['Dark 1', 'Dark 2', 'Light 1', 'Light 2'],
-                        'default' => 'Dark 1',
+                        'options' => ['Style 1', 'Style 2', 'Style 3', 'Style 4'],
+                        'default' => 'Style 1',
                         'name' => 'page_template'
                     ]
                 ]

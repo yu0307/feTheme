@@ -17,6 +17,67 @@ $themes:(
     )
 );
 
+$backgrounds:(
+        1:("bg-color":#f8f8f8),
+        2:("bg-color":#e9ebde),
+        3:("bg-color":#acaaaa),
+        4:("bg-color":#e2ebef),
+        5:("bg-color":#c6c9d1),
+        6:("bg-color":#dce1e4)
+);
+
+$theme:(
+    "dark":(
+        "brand":( "bg-color":#181a1d,"font-color":#ffffff),
+        "nav-bar":("bg-color":#f8f8f8,"font-color":#484E55),
+        "left-panel":("bg-color":#2b2e33,"font-color":#e2e2e2),
+        "primary":("bg-color":#ffffff,"font-color":#484E55),
+        "secondary":("bg-color":#dce1e4,"font-color":#202020)
+    ),
+    "blue":(
+        "brand":( "bg-color":#319db5,"font-color":#ffffff),
+        "nav-bar":("bg-color":#f8f8f8,"font-color":#484E55),
+        "left-panel":("bg-color":#174955,"font-color":#e2e2e2),
+        "primary":("bg-color":#ffffff,"font-color":#484E55),
+        "secondary":("bg-color":#dce1e4,"font-color":#484E55)
+    ),
+    "red":(
+        "brand":( "bg-color":#c9625f,"font-color":#ffffff),
+        "nav-bar":("bg-color":#f8f8f8,"font-color":#484E55),
+        "left-panel":("bg-color":#3c2120,"font-color":#e2e2e2),
+        "primary":("bg-color":#ffffff,"font-color":#484E55),
+        "secondary":("bg-color":#dce1e4,"font-color":#484E55)
+    ),
+    "green":(
+        "brand":( "bg-color":#18a689,"font-color":#ffffff),
+        "nav-bar":("bg-color":#f8f8f8,"font-color":#484E55),
+        "left-panel":("bg-color":#0e3029,"font-color":#e2e2e2),
+        "primary":("bg-color":#ffffff,"font-color":#484E55),
+        "secondary":("bg-color":#dce1e4,"font-color":#484E55)
+    ),
+    "orange":(
+        "brand":( "bg-color":#b66d39,"font-color":#ffffff),
+        "nav-bar":("bg-color":#f8f8f8,"font-color":#484E55),
+        "left-panel":("bg-color":#4a3526,"font-color":#e2e2e2),
+        "primary":("bg-color":#ffffff,"font-color":#484E55),
+        "secondary":("bg-color":#dce1e4,"font-color":#484E55)
+    ),
+    "purple":(
+        "brand":( "bg-color":#6e62b5,"font-color":#ffffff),
+        "nav-bar":("bg-color":#f8f8f8,"font-color":#484E55),
+        "left-panel":("bg-color":#393f51,"font-color":#e2e2e2),
+        "primary":("bg-color":#ffffff,"font-color":#484E55),
+        "secondary":("bg-color":#dce1e4,"font-color":#484E55)
+    ),
+    "navy-blue":(
+        "brand":( "bg-color":#4a89dc,"font-color":#ffffff),
+        "nav-bar":("bg-color":#f8f8f8,"font-color":#484E55),
+        "left-panel":("bg-color":#1e3948,"font-color":#e2e2e2),
+        "primary":("bg-color":#ffffff,"font-color":#484E55),
+        "secondary":("bg-color":#dce1e4,"font-color":#484E55)
+    )
+);
+
 $color_palette:(
     "default":(
         "color":#e0e6eb,"font-color":#616c76

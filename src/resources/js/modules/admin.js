@@ -39,27 +39,33 @@ window.ready(()=>{
         })
     });
 
-    // $('input:radio[name="page_template"]').on('ifChecked', function () {
-    //     switch ($(this).val()) {
-    //         case 'Dark 2':
-    //             $('body').removeClass('theme-sltd theme-sltl theme-sdtl').addClass('theme-sdtd');
-    //             break;
-    //         case 'Light 1':
-    //             $('body').removeClass('theme-sdtd theme-sltl theme-sdtl').addClass('theme-sltd');
-    //             break;
-    //         case 'Light 2':
-    //             $('body').removeClass('theme-sltd theme-sdtd theme-sdtl').addClass('theme-sltl');
-    //             break;
-    //         default:
-    //             $('body').removeClass('theme-sltd theme-sltl theme-sdtd').addClass('theme-sdtl');
-    //     }
-    // });
+    document.querySelectorAll('select[name="page_bgcolor"]').forEach((elm)=>{
+        elm.addEventListener('change',function(){
+            let tar = document.querySelector('.body');
+            this.querySelectorAll('option').forEach((elm)=>{
+                tar.classList.remove(('main-bg-'+elm.value).replaceAll(' ','-').toLowerCase());
+            })
+            tar.classList.add('main-bg-'+this.value.replaceAll(' ','-').toLowerCase());
+        });
+    });
 
-    // $('select[name="page_color"]').on('change', function () {
-    //     $('body').removeClass('color-primary color-dark color-red color-green color-orange color-purple color-blue').addClass('color-' + $(this).val().toLowerCase());
-    // });
+    document.querySelectorAll('input[name="page_template"]').forEach((elm)=>{
+        elm.addEventListener('click',function(){
+            let tar = document.querySelector('.body');
+            document.querySelectorAll('input[name="page_template"]').forEach((elm)=>{
+                tar.classList.remove(('theme-'+elm.value).replaceAll(' ','-').toLowerCase());
+            });
+            tar.classList.add('theme-'+this.value.replaceAll(' ','-').toLowerCase());
+        })
+    });
 
-    // $('select[name="page_bgcolor"]').on('change', function () {
-    //     $('body').removeClass('bg-clean bg-lighter bg-light-default bg-light-blue bg-light-purple bg-light-dark').addClass('bg-' + $(this).val().toLowerCase());
-    // });
+    document.querySelectorAll('select[name="page_color"]').forEach((elm)=>{
+        elm.addEventListener('change',function(){
+            let tar = document.querySelector('.body');
+            this.querySelectorAll('option').forEach((elm)=>{
+                tar.classList.remove(('theme-'+elm.value).replaceAll(' ','-').toLowerCase());
+            })
+            tar.classList.add('theme-'+this.value.replaceAll(' ','-').toLowerCase());
+        });
+    });
 });

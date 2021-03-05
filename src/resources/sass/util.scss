@@ -1,4 +1,6 @@
 @use "sass:color";
+@use "sass:list";
+@use "sass:map";
 @use 'variables';
 @use 'main-content';
 @use 'button';
@@ -10,14 +12,20 @@
 @use 'form';
 
 :root{
-    @each $location,$list in variables.$themes {
-        @each $key,$vals in $list {
+    @each $key,$vals in variables.$backgrounds{
+        @each $attr,$val in $vals {
+            --backgrounds-#{$key}:#{$val};
+        }
+    }
+
+    @each $theme,$list in variables.$theme{
+        @each $location,$vals in $list {
             @each $attr,$val in $vals {
-                --#{$location}-#{$key}-#{$attr}:#{$val};
-                --#{$location}-#{$attr}:#ffffff;
+                --#{$theme}-#{$location}-#{$attr}:#{$val};
             }
         }
     }
+
     @each $key,$color in variables.$color_palette {
         --#{$key}:#{map-get($color, "color")};
         --#{$key}-color:#{map-get($color, "font-color")};

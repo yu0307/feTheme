@@ -1,6 +1,9 @@
 @includeIf('fe_theme::topbar')
 @includeIf('fe_theme::leftpanel')
-<section class="body h-100 brand1 nav-bar1 left-panel1 primary1 secondary1 menu-{{strtolower($siteInfo['themeSettings']['sb_showon']??'Always')}}">
+<section class="body h-100 
+				theme-{{strtolower(str_replace(' ','-',($siteInfo['themeSettings']['page_color']??'Dark')))}} 
+				main-bg-{{strtolower(str_replace(' ','-',($siteInfo['themeSettings']['page_bgcolor']??'Color4')))}} 
+				menu-{{strtolower(str_replace(' ','-',($siteInfo['themeSettings']['sb_showon']??'Always')))}}">
 	<div class="container-fluid h-100">
 		<div class="row h-100">
 			<!-- Left Side -->

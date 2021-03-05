@@ -11,18 +11,51 @@ body{
 
 .body{
 
-    @each $location,$list in variables.$themes {
-        @each $key,$vals in $list {
-            @each $attr,$val in $vals {
-                &.#{$location+$key}{
-                    --#{$location}-#{$attr}:var(--#{$location}-#{$key}-#{$attr});
+    @each $key,$vals in variables.$backgrounds{
+        @each $attr,$val in $vals {
+            &.main-bg-color#{$key}{
+                --main-bg-color:var(--backgrounds-#{$key});
+            }
+        }
+    }
+
+    @each $theme,$list in variables.$theme{
+        &.theme-#{$theme}{
+            @each $location,$vals in $list {
+                @each $attr,$val in $vals {
+                    --v-#{$location}-#{$attr}:#{$val};
                 }
             }
         }
     }
 
+    --brand-bg-color:var(--v-brand-bg-color);
+    --brand-font-color:var(--v-brand-font-color);
+    --nav-bar-bg-color:var(--v-nav-bar-bg-color);
+    --nav-bar-font-color:var(--v-nav-bar-font-color);
+    --left-panel-bg-color:var(--v-left-panel-bg-color);
+    --left-panel-font-color:var(--v-left-panel-font-color);
+
+    &.theme-style-2{
+        --nav-bar-bg-color:var(--v-left-panel-bg-color);
+        --nav-bar-font-color:var(--v-left-panel-font-color);
+        --left-panel-bg-color:var(--v-primary-bg-color);
+        --left-panel-font-color:var(--v-primary-font-color);
+    }
+
+    &.theme-style-3{
+        --nav-bar-bg-color:var(--v-left-panel-bg-color);
+        --nav-bar-font-color:var(--v-left-panel-font-color);
+    }
+    &.theme-style-4{
+        --nav-bar-bg-color:var(--v-primary-bg-color);
+        --nav-bar-font-color:var(--v-primary-font-color);
+        --left-panel-bg-color:var(--v-primary-bg-color);
+        --left-panel-font-color:var(--v-primary-font-color);
+    }
+
     font-family: 'Lato', 'Open Sans', Helvetica, sans-serif;
-    background-color:var(--primary-bg-color);
+    background-color:var(--main-bg-color);
     color: var(--primary-font-color);
 
     a{
@@ -33,7 +66,7 @@ body{
     }
     .container-fluid{
         .nav-bar{
-            height: 46px;
+            height: 60px;
             max-height: 46px;
             box-shadow: 0 3px 3px rgb(0 0 0 / 5%);
             z-index: 2030;
@@ -99,7 +132,7 @@ body{
                         &.prof-mini-profile-image{
                             margin-left: 0 !important;
                             margin-right: 0 !important;
-                            padding: 0.25rem !important;
+                            padding: 0 1rem !important;
                             display: flex;
                             justify-content: space-evenly !important;
                             align-items: center !important;
