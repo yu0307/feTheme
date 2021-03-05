@@ -8,6 +8,7 @@ class felaraframeTheme implements feTheme {
     private $myDomainName;
     private $mySettings;
     private $themeResources=[];
+    private $adminResources=[];
 
     public function __construct()
     {
@@ -47,6 +48,9 @@ class felaraframeTheme implements feTheme {
                 ]
             ];
         }
+        $this->adminResources=[
+            'js/modules/admin.js'
+        ];
         $this->mySettings=[
             "Layouts"=>[
                 'Side Bar'=>[
@@ -56,23 +60,11 @@ class felaraframeTheme implements feTheme {
                         'default' => 'Normal',
                         'name'=>'sb_structure'
                     ],
-                    'Style' => [
-                        'type' => 'radio',
-                        'options' => ['Fixed', 'Fluid'],
-                        'default' => 'Fixed',
-                        'name' => 'sb_style'
-                    ],
                     'Show On' => [
                         'type' => 'radio',
                         'options' => ['Hover','Always'],
                         'default' => 'Always',
                         'name' => 'sb_showon'
-                    ],
-                    'SubMenu Shown On' => [
-                        'type' => 'radio',
-                        'options' => ['Click', 'Hover'],
-                        'default' => 'Click',
-                        'name' => 'sb_subshowon'
                     ],
                     'Initial Behavior' => [
                         'type' => 'radio',
@@ -96,7 +88,6 @@ class felaraframeTheme implements feTheme {
                     ]
                 ],
                 'Page'=>[
-                    
                     'Color' => [
                         'type' => 'select',
                         'options' => ['Primary', 'Dark', 'red', 'green', 'orange', 'purple', 'blue'],
@@ -108,12 +99,6 @@ class felaraframeTheme implements feTheme {
                         'options' => ['Clean', 'Lighter', 'Light-default', 'Light-blue', 'Light-purple', 'Light-dark'],
                         'default' => 'Light-blue',
                         'name' => 'page_bgcolor'
-                    ],
-                    'Display' => [
-                        'type' => 'radio',
-                        'options' => ['Full Width', 'Boxed'],
-                        'default' => 'Full Width',
-                        'name' => 'page_display'
                     ],
                     'Template Style' => [
                         'type' => 'radio',
@@ -130,6 +115,10 @@ class felaraframeTheme implements feTheme {
         return $this->themeResources;
     }
 
+    public function getAdminResources():array{
+        return $this->adminResources;
+    }
+
     public function name():string{
         return $this->myDomainName;
     }
@@ -144,7 +133,7 @@ class felaraframeTheme implements feTheme {
 
     public function description():string{
         return '
-            <h4>This is the default theme provided by the framework. </h4>
+            <h5>This is the default theme provided by the framework. </h5>
             You are free to make changes on the layout with the options provided below. 
             For more information on how to use this theme please refer to: <br/>
             Github <a href="https://github.com/yu0307/LaraFrame" target="_blank">FeLaraFrame</a>

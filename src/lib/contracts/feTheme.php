@@ -13,6 +13,10 @@ interface feTheme
 
     public function themeSettings():array;
 
+    //Resources to be loaded on every page
     public function getThemeResources():array;
+
+    //Resources to be loaded on control panel page
+    public function getAdminResources():array;
 
 }

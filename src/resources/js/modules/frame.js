@@ -55,6 +55,10 @@ window.ready(()=>{
             className : "os-theme-dark",
             scrollbars:{autoHide : "leave"},
             sizeAutoCapable:(elm.attributes.getNamedItem('size-auto-capable')?!!(elm.attributes.getNamedItem('size-auto-capable').value):true),
+            overflowBehavior:{
+                x:(elm.getAttribute('overflow-x')||'scroll'),
+                y:(elm.getAttribute('overflow-y')||'scroll')
+            },
             callbacks:{
                 onOverflowChanged:toggleNavButton
             }
@@ -62,6 +66,18 @@ window.ready(()=>{
         elm.querySelectorAll('.menu-direction-control').forEach((elm)=>{
             elm.addEventListener('click',scrollControl);
         })
+    });
+    document.querySelectorAll('.left-bar-ctrl i').forEach((elm)=>{
+        elm.addEventListener('click',function(){
+            switch(this.getAttribute('dir')){
+                case 'expand':
+                    document.getElementById('sidebar-left').classList.remove('nav-menu-collapsed');
+                    break;
+                case 'collapse':
+                    document.getElementById('sidebar-left').classList.add('nav-menu-collapsed');
+                    break;
+            }
+        });
     });
 });
 

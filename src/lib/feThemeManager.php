@@ -96,6 +96,7 @@ class feThemeManager{
                     </a>
                     '.($hasSub?('
                     <ul class="sub-menu collapse">
+                        <li class="d-none parent-title">'.$menu['title'].'</li>
                         '.$this->renderMenu($menu['subMenu']).'
                     </ul>
                     '):"").'

@@ -4,44 +4,18 @@
 
 
 @section('left-panel')
-<div id="left-panel" class="h-100">
-    @switch(($siteInfo['themeSettings']['sb_topdisplay']??'None'))
-        @case('Profile Image')
-            <div class="sidebar-top big-img" style="display: block;">
-                <div class="user-image">
-                    <img src="{{app()->FeFrame->GetProfileImage(300)}}" class="img-fluid img-thumbnail bg-dark border-light p-1 rounded-circle">
-                </div>
-                <h4 class="text-truncate">@yield('user_name',(auth()->user()->name??''))</h4>
-                @yield('user_subctrl')
-            </div>
-            <hr>
-            @break
-        @case('Mini Profile Image')
-            <div class="sidebar-top p-1 mx-0 px-1 small-img clearfix justify-content-evenly d-flex align-items-center" style="display: block;">
-                <div class="user-image mx-1">
-                    <img src="{{app()->FeFrame->GetProfileImage()}}" class="img-fluid rounded-circle">
-                </div>
-                <div class="user-details">
-                    <h4>@yield('user_name',(auth()->user()->name??''))</h4>
-                    @yield('user_subctrl')
-                </div>
-            </div>
-            <hr>
-            @break
-        @case('Icon')
-            <div class="userlogged clearfix m-0 p-0 d-flex justify-content-evenly align-items-center">
-                <i class="fab fa-grav fa-4x"></i>
-                <div class="user-details">
-                    <h4>@yield('user_name',(auth()->user()->name??''))</h4>
-                    @yield('user_subctrl')
-                </div>
-            </div>
-            <hr>
-            @break
-        @default
-            <div class="sidebar-top" style="display: none;"></div>
-    @endswitch
-    <div class="custom-scroll h-100">
+<div id="left-panel" class="h-100 d-flex flex-column">
+    <div class="sidebar-top prof-{{strtolower(str_replace(' ','-',($siteInfo['themeSettings']['sb_topdisplay']??'Mini Profile Image')))}}">
+        <div class="user-image">
+            <img src="{{app()->FeFrame->GetProfileImage(300)}}" class="img-fluid rounded-circle">
+        </div>
+        <i class="usr-default-icon fab fa-grav fa-4x d-none"></i>
+        <div class="user-details">
+            <h4 class="text-truncate">@yield('user_name',(auth()->user()->name??''))</h4>
+            @yield('user_subctrl')
+        </div>
+    </div>
+    <div id="nav-main-left" overflow-x="visible-hidden" class="custom-scroll flex-fill menu-{{strtolower($siteInfo['themeSettings']['sb_structure']??'Normal')}}">
         <div class="scroll-container p-0 h-100">
             <ul class="nav-menu nav-sidebar p-0 m-0">
                 <!-- SIDEBAR MENU -->

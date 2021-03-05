@@ -1,4 +1,5 @@
 @use 'variables';
+@use 'menu';
 body{
     position: absolute;
     top: 0px;
@@ -88,43 +89,81 @@ body{
                 a{
                     color: var(--left-panel-font-color);
                 }
-                .big-img{
-                    margin-bottom: 0;
-                    padding-top: 10px;
-                    text-align: center;
-                    .user-image{
-                        margin: auto;
-                        width: 60%;
-                    }
-                    h4{
-                        color: var(--left-panel-font-color);
-                        margin: auto;
-                        margin-bottom: 8px;
-                        margin-top: 10px;
-                        text-align: center;
-                        font-size: 18px;
-                    }
-                }
-                .small-img{
-                    padding-bottom: 0;
-                    text-align: center;
-                    .user-image{
-                        max-width: 100px;
-                    }
-                    .user-details{
-                        padding-left: 10px;
-                        text-align: left;
-                        h4{
-                            color: var(--left-panel-font-color);
-                            font-size: 18px;
+                #left-panel{
+                    & >.sidebar-top {
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                        margin-bottom: 10px;
+                        &.prof-none{
+                            display: none !important;
                         }
-                    }
-                }
-                .userlogged{
-                    display: block;
-                    h4{
-                        color: var(--left-panel-font-color);
-                        font-size: 18px;
+                        &.prof-mini-profile-image{
+                            margin-left: 0 !important;
+                            margin-right: 0 !important;
+                            padding: 0.25rem !important;
+                            display: flex;
+                            justify-content: space-evenly !important;
+                            align-items: center !important;
+                            padding-bottom: 0;
+                            text-align: center;
+                            .user-image{
+                                margin-left: 0.25rem !important;
+                                margin-right: 0.25rem !important;
+                                max-width: 60px;
+                            }
+                            .user-details{
+                                padding-left: 10px;
+                                text-align: left;
+                                h4{
+                                    color: var(--left-panel-font-color);
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                        &.prof-icon{
+                            display: block;
+                            margin: 0 !important;
+                            padding: 10px 5px !important;
+                            display: flex;
+                            justify-content: space-evenly !important;
+                            align-items: center !important;
+                            .user-image{
+                                display: none !important;
+                            }
+                            .usr-default-icon{
+                                display: block !important;
+                            }
+                            h4{
+                                color: var(--left-panel-font-color);
+                                font-size: 18px;
+                            }
+                        }
+                        &.prof-profile-image{
+                            margin-bottom: 0;
+                            padding-top: 10px;
+                            text-align: center; 
+                            .user-image{
+                                margin: auto;
+                                width: 60%;
+                                & >img{
+                                    border: 1px solid #dee2e6;
+                                    max-width: 100%;
+                                    height: auto;
+                                    background-color: var(--dark) !important;
+                                    color: var(--dark-color) !important;
+                                    width: 60% !important;
+                                    border-color: #f8f9fa !important;
+                                    padding: 0.25rem !important;
+                                }
+                            }
+                            h4{
+                                color: var(--left-panel-font-color);
+                                margin: auto;
+                                margin-bottom: 8px;
+                                margin-top: 10px;
+                                text-align: center;
+                                font-size: 18px;
+                            }
+                        }
                     }
                 }
                 .sidebar-footer{
@@ -138,7 +177,7 @@ body{
                     &>.menu-item{
                         padding-top: 0.25rem !important;
                         padding-bottom: 0.25rem !important;
-                        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                        border-bottom: 1px solid rgba(255, 255, 255, 0);
                     }
                     .menu-title{
                         max-width: 68%;
@@ -166,7 +205,7 @@ body{
                         .sub-menu{
                             position: relative;
                             background: #00000047;
-                            margin-top: 0.5rem;
+                            margin-top: 0rem;
                             li{
                                 &:before{
                                     background: #ffffff40;
@@ -215,6 +254,7 @@ section.main{
 }
 
 #sidebar-left{
+    z-index: 1000;
     &.show{
         display: block !important; 
     }
@@ -311,3 +351,4 @@ section.main{
         color: var(--left-panel-font-color);
     }
 }
+@include menu.menu;

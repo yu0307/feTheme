@@ -38,3 +38,9 @@
     <div class="clearfix">
     </div>
 </div>
+
+<div id="admin-resources">
+    @foreach ((app()->feThemeManager->GetCurrentTheme()->getAdminResources()??[]) as $resouce)
+        <script src="{{asset("/feiron/".app()->feThemeManager->GetCurrentTheme()->name().'/'.$resouce)}}"></script>
+    @endforeach
+</div>
