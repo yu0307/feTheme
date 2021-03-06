@@ -1,6 +1,7 @@
 @use 'variables';
 @mixin forms {
   .form-control {
+    margin: 0px;
     background-color: var(--default);
     border: 1px solid var(--default);
     box-shadow: none !important;

@@ -132,7 +132,7 @@ body{
                         &.prof-mini-profile-image{
                             margin-left: 0 !important;
                             margin-right: 0 !important;
-                            padding: 0 1rem !important;
+                            padding: 1rem !important;
                             display: flex;
                             justify-content: space-evenly !important;
                             align-items: center !important;
@@ -146,6 +146,7 @@ body{
                             .user-details{
                                 padding-left: 10px;
                                 text-align: left;
+                                max-width: 70%;
                                 h4{
                                     color: var(--left-panel-font-color);
                                     font-size: 18px;
@@ -161,6 +162,9 @@ body{
                             align-items: center !important;
                             .user-image{
                                 display: none !important;
+                            }
+                            .user-details{
+                                max-width: 65%;
                             }
                             .usr-default-icon{
                                 display: block !important;

@@ -4,6 +4,7 @@
         .menu-condensed{
             .menu-item{
                 text-align: center;
+                border-bottom: 1px solid rgb(167 167 167 / 5%) !important;
                 a{
                     position: relative;
                 }
@@ -39,7 +40,7 @@
         }
     }
     #sidebar-left{
-        width: auto !important;
+        max-width: 12%;
         .parent-title::before{
             content: none !important;
         }
@@ -48,6 +49,9 @@
         cursor: pointer;
     }
     @media (max-width: 768px) {
+        #sidebar-left{
+            max-width: 50%;
+        }
         #left-panel{
             .sidebar-top{
                 display: block !important;
@@ -72,6 +76,11 @@
                     }
                 }
             }
+            & >.sidebar-top {
+                &.prof-mini-profile-image, &.prof-icon{
+                    display: flex !important;
+                }
+            }
         }
         .left-bar-ctrl{
             display: none !important;
@@ -80,18 +89,21 @@
     @media (min-width: 768px) {
         .menu-hover{
             #sidebar-left{
+                width: 0px;
                 position: absolute !important;
                 top: 0px;
                 bottom: 0px;
                 z-index: 10010;
-                left: 0px;
+                left: -10px;
                 .top-left,.left-panel{
                     display: none !important;
                 }
                 &:hover{
+                    width: inherit !important;
                     padding-left: 12px;
                     padding-right: 12px;
                     overflow-x: inherit !important;
+                    left: 0px;
                     .top-left,.left-panel{
                         display:inherit !important;
                     }
@@ -107,6 +119,7 @@
         .body:not(.menu-hover){
             #sidebar-left{
                 &.nav-menu-collapsed{
+                    width: auto !important;
                     .navbar-brand, .sidebar-top{
                         display: none !important;
                     }

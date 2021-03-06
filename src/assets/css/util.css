@@ -3101,6 +3101,7 @@ body .panel-accordion.aero-accordion .panel-heading .panel-title > a:after {
   font-family: "line-icons" !important;
 }
 body .form-control {
+  margin: 0px;
   background-color: var(--default);
   border: 1px solid var(--default);
   box-shadow: none !important;

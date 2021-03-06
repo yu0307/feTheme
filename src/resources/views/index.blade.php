@@ -10,7 +10,7 @@
 			<div id="sidebar-left" class="col-sm-4 col-4 col-md-2 d-none d-md-block position-relative nav-menu-{{strtolower($siteInfo['themeSettings']['sb_initbh']??'Normal')}}">
 				<div class="row top-left nav-bar brand">
 					<div class="col align-self-center d-flex align-items-center flex-column">
-						<a class="navbar-brand me-0 text-truncate d-block text-capitalize" href="{{Route::has('home')?route('home'):'/'}}">@yield('siteName',config('app.name'))</a>
+						<a class="navbar-brand me-0 text-truncate w-100 d-block text-capitalize" href="{{Route::has('home')?route('home'):'/'}}">@yield('siteName',config('app.name'))</a>
 						<div class="left-bar-ctrl">
 							<i class="fas fa-indent fa-lg d-none" dir="expand"></i>
 						</div>
