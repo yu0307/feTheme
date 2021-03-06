@@ -88,14 +88,15 @@ body{
                     .topbar-controls{
                         max-width: 70%;
                         .nav-controls{
-                            max-width: 80%;
-                            width: 80%;
+                            max-width: 100%;
+                            width: 100%;
+                            display: contents;
                             .menu-direction-control{
                                 margin: 0px 2px;
                             }
                             .nav-container{
-                                max-width: 95%;
-                                width: 95%;
+                                max-width: 100%;
+                                width: auto;
                                 margin-bottom: 0;
                                 .nav-icons{
                                     white-space: nowrap;
@@ -276,9 +277,9 @@ body{
 
 .custom-scroll{
     .scroll-x, .scroll-y{
-        display: none;
+        display: none !important;
         &.show{
-            display: inherit;
+            display: inline-block !important;
         }
     }
 }
