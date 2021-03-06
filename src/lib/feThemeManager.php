@@ -70,11 +70,11 @@ class feThemeManager{
         foreach($settingList as $key=>$settings){
             $heading=($heading>5)?5:$heading;
             if((false === array_key_exists('type', $settings))){
-                $html.= '<div class="form-row row"><h'.$heading.'><strong>'.$key. '</strong></h' . $heading . '>'.$this->RenderSettings($settings, $valueList, $heading+1). '</div>';
+                $html.= '<div class="form-row row"><h'.$heading.' class="alert '.($heading>3?'alert-success':'').' p-2 mx-2" ><strong>'.$key. '</strong></h' . $heading . '>'.$this->RenderSettings($settings, $valueList, $heading+1). '</div>';
             }else{
                 $html .= '<div class="ThemeSettings col-md-4 col-sm-12">
                             <div class="ThemeSettingHeading">
-                                <h6>'. ($settings['label']??$key).'</h6>
+                                <label class="fw-bolder">'. ($settings['label']??$key).'</label>
                             </div>      
                             ' . app()->FeFrame->BuildFormControl($settings, ($valueList[$settings['name']]??null)).'
                           </div>';

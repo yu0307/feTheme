@@ -34,3 +34,8 @@
 .invalid-feedback {
   display: none;
 }
+
+.ThemeSettings {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}

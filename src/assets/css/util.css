@@ -3100,6 +3100,9 @@ body .panel-accordion.aero-accordion .panel-heading .panel-title > a:after {
   float: right;
   font-family: "line-icons" !important;
 }
+body .form-group {
+  margin: 8px 5px;
+}
 body .form-control {
   margin: 0px;
   background-color: var(--default);
@@ -3849,10 +3852,23 @@ body .main-content .panel-content {
 }
 body .main-content .panel-content h3 {
   font-family: "Open Sans", sans-serif;
-  font-size: 15px;
-  margin-bottom: 15px;
-  margin-top: 25px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   text-transform: uppercase;
+  font-weight: normal;
+}
+body .main-content .panel-content h4 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 16px;
+}
+body .main-content .panel-content h5 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-weight: normal;
+  font-size: 14px;
 }
 body .main-content .panel-transparent .panel-header {
   border: none !important;
