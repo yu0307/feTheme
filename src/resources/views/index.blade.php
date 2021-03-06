@@ -1,6 +1,7 @@
 @includeIf('fe_theme::topbar')
 @includeIf('fe_theme::leftpanel')
 <section class="body h-100 
+				theme-{{strtolower(str_replace(' ','-',($siteInfo['themeSettings']['page_template']??'style-1')))}} 
 				theme-{{strtolower(str_replace(' ','-',($siteInfo['themeSettings']['page_color']??'Dark')))}} 
 				main-bg-{{strtolower(str_replace(' ','-',($siteInfo['themeSettings']['page_bgcolor']??'Color4')))}} 
 				menu-{{strtolower(str_replace(' ','-',($siteInfo['themeSettings']['sb_showon']??'Always')))}}">

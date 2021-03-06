@@ -14,8 +14,8 @@ window.ready(()=>{
         .then((resp)=>{
             window.frameUtil.Notify(resp);
         })
-        .error((error)=>{
-            window.frameUtil.Notify(error, 'error');
+        .catch((e)=>{
+            window.frameUtil.Notify(e, 'error');
         });
     });
 
@@ -44,7 +44,7 @@ window.ready(()=>{
                     window.frameUtil.Notify(resp, 'error');
                 }
             })
-            .error((error)=>{
+            .catch((error)=>{
                 window.frameUtil.Notify(error, 'error');
             });
         }

@@ -24,7 +24,7 @@
     </div>
 </x-fe_theme::fe-portlet>
 
-<x-fe_theme::fe-portlet id="FeThemeSettings" class="my-2">
+<x-fe_theme::fe-portlet id="FeThemeSettings" class="my-2" dataTarget="{{route('updateThemeSetting')}}">
     <x-slot name="header">
         <h2>Theme <strong>Settings</strong></h2>
     </x-slot>
