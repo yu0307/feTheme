@@ -1,5 +1,23 @@
 @use 'variables';
 @use 'menu';
+
+@keyframes levitate {
+    0% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-10px);
+    }
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+.levitate{
+    animation-name: levitate; 
+    animation-duration: 2s !important; 
+}
+
 body{
     position: absolute;
     top: 0px;
