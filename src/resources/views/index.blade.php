@@ -32,7 +32,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row main h-100 w-100">
+				<div class="row main h-100">
 					<div class="col p-2" size-auto-capable='false'>
 						<div class="main-content scroll-container h-100">
 							<main class="h-100">
@@ -47,3 +47,11 @@
 	</div>
 </section>
 @stack('endBody')
+@push('footerscripts')
+	<script type="text/javascript">
+		@stack('JsBeforeReady')
+		window.ready(()=>{
+			@stack('DocumentReady')
+		});
+	</script>
+@endpush
