@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 @-webkit-keyframes levitate {
   0% {
     transform: translatey(0px);
@@ -43,7 +44,7 @@ body {
   --nav-bar-font-color:var(--v-nav-bar-font-color);
   --left-panel-bg-color:var(--v-left-panel-bg-color);
   --left-panel-font-color:var(--v-left-panel-font-color);
-  font-family: "Lato", "Open Sans", Helvetica, sans-serif;
+  font-family: "Open Sans", "Lato", Helvetica, sans-serif;
   background-color: var(--main-bg-color);
   color: var(--primary-font-color);
 }

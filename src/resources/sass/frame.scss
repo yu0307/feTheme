@@ -1,6 +1,6 @@
 @use 'variables';
 @use 'menu';
-
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 @keyframes levitate {
     0% {
         transform: translatey(0px);
@@ -72,7 +72,7 @@ body{
         --left-panel-font-color:var(--v-primary-font-color);
     }
 
-    font-family: 'Lato', 'Open Sans', Helvetica, sans-serif;
+    font-family: 'Open Sans','Lato', Helvetica, sans-serif;
     background-color:var(--main-bg-color);
     color: var(--primary-font-color);
 
