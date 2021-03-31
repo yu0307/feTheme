@@ -22,16 +22,21 @@ function clearWorkingArea() {
     document.getElementById('control_CRUD').querySelectorAll('.LF_CRUD').forEach((elm)=>{
         elm.classList.remove('show');
     });
+
     document.querySelectorAll('#control_CRUD input:not([type="radio"],[type="checkbox"]), #control_CRUD textarea, #control_CRUD select').forEach((elm)=>{
         elm.value="";
-        elm.classList.remove('checked');
-    });
-    document.querySelectorAll('#control_CRUD select').forEach((elm)=>{
-        elm.value=(elm.querySelector('option[default]')||{value:""}).value;
-        elm.classList.remove('checked');
     });
     document.querySelectorAll('#control_CRUD input[type="radio"],#control_CRUD input[type="checkbox"]').forEach((elm)=>{
         elm.classList.remove('checked');
+        elm.checked=false;
+    });
+
+    document.querySelectorAll('#control_CRUD input[type="radio"].default,#control_CRUD input[type="checkbox"].default').forEach((elm)=>{
+        elm.checked=true;
+    });
+
+    document.querySelectorAll('#control_CRUD select').forEach((elm)=>{
+        elm.value=(elm.querySelector('option[default]')||{value:""}).value;
     });
 }
 
