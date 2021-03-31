@@ -1,0 +1,44 @@
+#control_CRUD{
+    .modal-content{
+        box-shadow: none;
+    }
+    .LF_CRUD{
+        display: none;
+        &.show{
+            display: block;
+        }
+        .input-group{
+            width: 100%;
+        }
+    }
+    .modal-footer{
+        .btn{
+            min-width: 120px;
+        }
+    } 
+    .loading{
+        display: none;
+        &.show{
+            display: block;
+            ~.CRUD_ctr_Area{
+                display: none;
+            }
+        }
+    }
+}
+#usr_ID:not([value=""]) ~.form-row .whenUpdate{
+    display: block;
+}
+
+#controlPanel{
+    min-height: 95%;
+}
+
+.invalid-feedback{
+    display: none;
+}
+
+.ThemeSettings{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}

@@ -1,0 +1,17 @@
+#Profile_Panel .usrProfile.editable{
+    cursor: pointer;
+}
+#Profile_Panel .usrProfile.editable .ctrls{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: #0000008c;
+    height: 30%;
+    color: white;
+    text-align: center;
+    display: none;
+}
+#Profile_Panel .editable:hover > .ctrls{
+    display: block;
+}

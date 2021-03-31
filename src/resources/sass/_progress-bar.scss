@@ -1,0 +1,35 @@
+@use 'variables';
+@mixin progress-bars {
+    .progress {
+        -webkit-box-shadow: none;
+        background: #ebedef;
+        border-radius: 32px;
+        box-shadow: none;
+        height: 12px;
+    }
+    .progress-bar {
+        -webkit-box-shadow: none;
+        background-color: var(--primary);
+        box-shadow: none;
+        line-height: 12px;
+        padding: 2px 5px;
+    }
+    @each $key, $color in variables.$color_palette {
+        .progress-bar-#{$key} {
+            background-color: var(--#{$key});
+            color: var(--#{$key}-color);
+        }
+        .label-#{$key}[href]:hover {
+            background-color: var(--#{$key}-hover);
+        }
+        .label-#{$key}[href]:focus {
+            background-color: var(--#{$key}-active);
+        }
+    }
+    .progress.progress-bar-large {
+        height: 20px;
+        .progress-bar {
+            line-height: 20px;
+        }
+    }
+}

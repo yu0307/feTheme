@@ -1,0 +1,28 @@
+@use 'variables';
+@mixin badges {
+    .badge {
+        border-radius: 2px;
+        font-weight: 300;
+    }
+    .badge-rounded {
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        height: 24px;
+        padding: 0;
+        text-align: center;
+        width: 24px;
+        border-radius: 12px;
+    }
+    .badge-sold {
+        text-transform: uppercase;
+    }
+    .badge-stock {
+        text-decoration: line-through;
+    }
+    @each $key,$color in variables.$color_palette {
+        .badge-#{$key} {
+            background-color: var(--#{$key});
+            color: var(--#{$key}-color);
+        }
+    }
+    
+}

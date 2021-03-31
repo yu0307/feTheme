@@ -1,0 +1,109 @@
+@use "sass:color";
+@use "sass:list";
+@use "sass:map";
+@use 'variables';
+@use 'main-content';
+@use 'button';
+@use 'badge';
+@use 'labels';
+@use 'progress-bar';
+@use 'tab';
+@use 'panel-accordion';
+@use 'form';
+
+:root{
+    @each $key,$vals in variables.$backgrounds{
+        @each $attr,$val in $vals {
+            --backgrounds-#{$key}:#{$val};
+        }
+    }
+
+    @each $theme,$list in variables.$theme{
+        @each $location,$vals in $list {
+            @each $attr,$val in $vals {
+                --#{$theme}-#{$location}-#{$attr}:#{$val};
+            }
+        }
+    }
+
+    @each $key,$color in variables.$color_palette {
+        --#{$key}:#{map-get($color, "color")};
+        --#{$key}-color:#{map-get($color, "font-color")};
+        --#{$key}-hover:#{color.scale(map-get($color, "color"), $lightness: -5%)};
+        --#{$key}-active:#{color.scale(map-get($color, "color"), $lightness: -10%)};
+        --#{$key}-open:#{color.scale(map-get($color, "color"), $lightness: -20%)};
+        --#{$key}-disabled:#{color.scale(map-get($color, "color"), $lightness: -30%)};
+    }
+}
+
+@each $key,$color in variables.$color_palette {
+    .c-#{$key}{
+        color:var(--#{$key}) !important;
+    }
+    .bg-#{$key}{
+        &:not(i), &.form-control:focus{
+            background-color:var(--#{$key}) !important;
+            color: var(--#{$key}-color) !important;
+        }
+    }
+}
+
+@for $i from 1 through 5 {
+    .w-#{$i*100}px{
+        width: #{$i*100}px;
+    }
+}
+@for $i from 5 through 15 {
+    .ft-#{$i}{
+        font-size: #{$i}px;
+    }
+    .ft-#{$i}rem{
+        font-size: #{$i*0.1}rem;
+    }
+}
+
+*{
+    transition: all 0.5s ease;
+}
+.no-transition{
+    transition: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a{
+    color: inherit;
+}
+
+.no-decoration{
+    list-style: none;
+    text-decoration: none;
+}
+.cur-pointer{
+    cursor: pointer;
+}
+
+body{
+    @include button.buttons;
+    @include badge.badges;
+    @include labels.labels;
+    @include progress-bar.progress-bars;
+    @include tab.tabs;
+    @include panel-accordion.accordions;
+    @include form.forms;
+    .main-content{
+        @include main-content.main-content;
+    }
+    ul{
+        border-width: 0px !important;
+    }
+    .noty_body{
+        p{
+            font-size: 12px;
+        }
+    }
+}
+@import "~noty/src/noty.scss";
+@import "~noty/src/themes/bootstrap-v4.scss";

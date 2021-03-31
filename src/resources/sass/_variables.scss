@@ -1,0 +1,154 @@
+@use "sass:map";
+$themes:(
+    "brand":(
+        1:("bg-color":#181a1d,"font-color":#ffffff)
+    ),
+    "nav-bar":(
+        1:("bg-color":#f8f8f8,"font-color":#161616)
+    ),
+    "left-panel":(
+        1:("bg-color":#2b2e33,"font-color":#959FA9)
+    ),
+    "primary":(
+        1:("bg-color":#dce1e4,"font-color":#161616)
+    ),
+    "secondary":(
+        1:("bg-color":#e2ebef,"font-color":#202020)
+    )
+);
+
+$backgrounds:(
+        1:("bg-color":#f8f8f8),
+        2:("bg-color":#e9ebde),
+        3:("bg-color":#acaaaa),
+        4:("bg-color":#e2ebef),
+        5:("bg-color":#c6c9d1),
+        6:("bg-color":#dce1e4)
+);
+
+$theme:(
+    "dark":(
+        "brand":( "bg-color":#181a1d,"font-color":#ffffff),
+        "nav-bar":("bg-color":#f8f8f8,"font-color":#484E55),
+        "left-panel":("bg-color":#2b2e33,"font-color":#e2e2e2),
+        "primary":("bg-color":#ffffff,"font-color":#484E55),
+        "secondary":("bg-color":#dce1e4,"font-color":#202020)
+    ),
+    "blue":(
+        "brand":( "bg-color":#319db5,"font-color":#ffffff),
+        "nav-bar":("bg-color":#f8f8f8,"font-color":#484E55),
+        "left-panel":("bg-color":#174955,"font-color":#e2e2e2),
+        "primary":("bg-color":#ffffff,"font-color":#484E55),
+        "secondary":("bg-color":#dce1e4,"font-color":#484E55)
+    ),
+    "red":(
+        "brand":( "bg-color":#c9625f,"font-color":#ffffff),
+        "nav-bar":("bg-color":#f8f8f8,"font-color":#484E55),
+        "left-panel":("bg-color":#3c2120,"font-color":#e2e2e2),
+        "primary":("bg-color":#ffffff,"font-color":#484E55),
+        "secondary":("bg-color":#dce1e4,"font-color":#484E55)
+    ),
+    "green":(
+        "brand":( "bg-color":#18a689,"font-color":#ffffff),
+        "nav-bar":("bg-color":#f8f8f8,"font-color":#484E55),
+        "left-panel":("bg-color":#0e3029,"font-color":#e2e2e2),
+        "primary":("bg-color":#ffffff,"font-color":#484E55),
+        "secondary":("bg-color":#dce1e4,"font-color":#484E55)
+    ),
+    "orange":(
+        "brand":( "bg-color":#b66d39,"font-color":#ffffff),
+        "nav-bar":("bg-color":#f8f8f8,"font-color":#484E55),
+        "left-panel":("bg-color":#4a3526,"font-color":#e2e2e2),
+        "primary":("bg-color":#ffffff,"font-color":#484E55),
+        "secondary":("bg-color":#dce1e4,"font-color":#484E55)
+    ),
+    "purple":(
+        "brand":( "bg-color":#6e62b5,"font-color":#ffffff),
+        "nav-bar":("bg-color":#f8f8f8,"font-color":#484E55),
+        "left-panel":("bg-color":#393f51,"font-color":#e2e2e2),
+        "primary":("bg-color":#ffffff,"font-color":#484E55),
+        "secondary":("bg-color":#dce1e4,"font-color":#484E55)
+    ),
+    "navy-blue":(
+        "brand":( "bg-color":#4a89dc,"font-color":#ffffff),
+        "nav-bar":("bg-color":#f8f8f8,"font-color":#484E55),
+        "left-panel":("bg-color":#1e3948,"font-color":#e2e2e2),
+        "primary":("bg-color":#ffffff,"font-color":#484E55),
+        "secondary":("bg-color":#dce1e4,"font-color":#484E55)
+    )
+);
+
+$color_palette:(
+    "default":(
+        "color":#e0e6eb,"font-color":#616c76
+    ),
+    "primary":(
+        "color":#319DB5,"font-color":#fff
+    ),
+    "secondary":(
+        "color":#1E6170,"font-color":#fff
+    ),
+    "info":(
+        "color":#f1cb5a,"font-color":#252525
+    ),
+    "danger":(
+        "color":#C75757,"font-color":#fff
+    ),
+    "success":(
+        "color":#18A689,"font-color":#fff
+    ),
+    "warning":(
+        "color":#FF9122,"font-color":#fff
+    ),
+    "gray":(
+        "color":#82848A,"font-color":#000000
+    ),
+    "gray-light":(
+        "color":#f0efef,"font-color":#5B5B5B
+    ),
+    "red":(
+        "color":#C9625F,"font-color":#fff
+    ),
+    "yellow":(
+        "color":#EBC85E,"font-color":#fff
+    ),
+    "white":(
+        "color":#fff,"font-color":#000000
+    ),
+    "light":(
+        "color":#E9E9E9,"font-color":#000000
+    ),
+    "green":(
+        "color":#18a689,"font-color":#fff
+    ),
+    "blue":(
+        "color":#4584D1,"font-color":#fff
+    ),
+    "dark":(
+        "color":#2B2E33,"font-color":#fff
+    ),
+    "blue-light":(
+        "color":#c6e9f5,"font-color":#5B5B5B
+    ),
+    "blue-dark":(
+        "color":#30364A,"font-color":#fff
+    ),
+    "orange":(
+        "color":#F2A057,"font-color":#fff
+    ),
+    "purple":(
+        "color":#A58BD3,"font-color":#fff
+    ),
+    "purple-dark":(
+        "color":#393F51,"font-color":#fff
+    ),
+    "primary-dark":(
+        "color":#164954,"font-color":#fff
+    ),
+    "pink":(
+        "color":#DC88E6,"font-color":#fff
+    ),
+    "aero":(
+        "color":#B9D5DB,"font-color":#2C2C2C
+    )
+)
