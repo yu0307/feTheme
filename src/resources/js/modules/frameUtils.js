@@ -52,36 +52,7 @@ function Notify(message, type, position, container, confirm, method) {
                     $noty.close();
                     confirm = false;
                 }, { id: 'button1', 'data-status': 'ok' })
-            ] : '',
-            callback: {
-                onShow: function () {
-                    if (container == '') {
-                        leftNotfication = $('.sidebar').width();
-                        if ($('body').hasClass('rtl')) {
-                            if (position == 'top' || position == 'bottom') {
-                                $('#noty_layout_top').css('margin-right', leftNotfication).css('left', 0);
-                                $('#noty_layout_bottom').css('margin-right', leftNotfication).css('left', 0);
-                            }
-                            if (position == 'topRight' || position == 'centerRight' || position == 'bottomRight') {
-                                $('#noty_layout_centerRight').css('right', leftNotfication + 20);
-                                $('#noty_layout_topRight').css('right', leftNotfication + 20);
-                                $('#noty_layout_bottomRight').css('right', leftNotfication + 20);
-                            }
-                        }
-                        else {
-                            if (position == 'top' || position == 'bottom') {
-                                $('#noty_layout_top').css('margin-left', leftNotfication).css('right', 0);
-                                $('#noty_layout_bottom').css('margin-left', leftNotfication).css('right', 0);
-                            }
-                            if (position == 'topLeft' || position == 'centerLeft' || position == 'bottomLeft') {
-                                $('#noty_layout_centerLeft').css('left', leftNotfication + 20);
-                                $('#noty_layout_topLeft').css('left', leftNotfication + 20);
-                                $('#noty_layout_bottomLeft').css('left', leftNotfication + 20);
-                            }
-                        }
-                    }
-                }
-            }
+            ] : ''
         }).show();
     }
 }

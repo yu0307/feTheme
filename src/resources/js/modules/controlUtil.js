@@ -49,6 +49,7 @@ function showCRUD(tar, preload = false) {
     } else {
         document.querySelector('#control_CRUD .loading').classList.remove('show');
     }
+    document.querySelector('#control_CRUD').dispatchEvent(new CustomEvent('shown-'+tar));
     crudModal.show();
 }
 
